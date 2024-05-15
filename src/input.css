@@ -44,7 +44,7 @@ body{
      @apply h-[42px] 2xl:h-[60px] font-16 ml-4 2xl:ml-6 text-gray-dark placeholder:text-xs 2xl:placeholder:text-base w-full outline-none focus:ring-0 ring-0 border-none
    }
    .default-label{
-     @apply font-18 text-gray-dark mb-2.5 capitalize inline-block
+     @apply font-18 text-gray-dark mb-2.5 2xl:mb-4 capitalize inline-block
    }
    .default-input{
      @apply h-[42px] 2xl:h-[60px] font-16 px-3 2xl:px-5 border border-gray-medium text-gray-dark placeholder:text-xs 2xl:placeholder:text-base w-full outline-none focus:ring-0 ring-0
@@ -69,7 +69,7 @@ body{
 }
 
 .table-row:has(input:checked){
-     @apply [&>*:first-child]:border-l [&>*:last-child]:border-r *:border-t *:border-b *:border-default-green bg-[#f1fbf5]
+     @apply [&>*:first-child]:border-l [&>*:last-child]:border-r *:border-t *:border-b *:border-default-green
 }
 .table-row:has(input:checked) .tableActionicon{
      @apply text-default-green

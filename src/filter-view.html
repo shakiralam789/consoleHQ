@@ -341,15 +341,81 @@
               </div>
             </div>
         </div>
-        
-        <div class="bg-white mt-6">
-            <div class="py-5 px-5 2xl:px-6 2xl:py-6 border-b">
-                <div class="flex flex-wrap items-center -mx-4">
-                  <div class="xl:w-1/3 lg:w-1/4 w-full px-4">
-                      <h5 class="text-gray-dark font-semibold font-24">All Contacts</h5>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6">
+          <div class="bg-white p-6 2xl:p-10">
+            <div class="flex justify-between items-center">
+              <h2 class="font-50 text-primary font-medium mb-4 2xl:mb-8">Robert Dewayne</h2>
+              <button>
+                  <svg class="-mt-2 size-[21px] 2xl:size-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.1846 25.5538H26.2503" stroke="#082020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.975 4.74349C16.9446 3.58473 18.6875 3.41482 19.8703 4.36467C19.9357 4.4162 22.0369 6.04849 22.0369 6.04849C23.3362 6.83399 23.74 8.50388 22.9367 9.77824C22.8941 9.84648 11.0149 24.7056 11.0149 24.7056C10.6197 25.1986 10.0198 25.4897 9.37863 25.4967L4.82941 25.5538L3.80441 21.2154C3.66083 20.6054 3.80441 19.9647 4.19963 19.4717L15.975 4.74349Z" stroke="#082020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13.7764 7.50098L20.5917 12.7349" stroke="#082020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+              </button>
+            </div>
+            <p class="font-18 text-gray-light">lorem ipsum</p>
+          </div>
+          <div class="bg-white p-6 2xl:p-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <p class="font-28 font-semibold text-primary mb-4 2xl:mb-8">Invoices Owed to you</p>
+                <span class="font-28 font-semibold text-default-green">45,300.00</span>
+              </div>
+              <div class="xl:pl-10">
+                <p class="font-18 text-gray-light mb-4 2xl:pb-5">They pay in 44 days on average</p>
+                <span class="font-18 text-red1">45,300.00 Overdue</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white px-6 py-4 2xl:px-8 2xl:py-6 mt-5 2xl:mt-7">
+          <div class="flex flex-wrap justify-between gap-3">
+            <ul class="flex flex-wrap items-center gap-x-8 gap-y-4 font-24">
+              <li class="capitalize text-gray-light active hover:text-secondary cursor-pointer [&.active]:text-secondary duration-300">activity</li>
+              <li class="capitalize text-gray-light hover:text-secondary cursor-pointer [&.active]:text-secondary duration-300">Contact Details</li>
+              <li class="capitalize text-gray-light hover:text-secondary cursor-pointer [&.active]:text-secondary duration-300">Assessments</li>
+              <li class="capitalize text-gray-light hover:text-secondary cursor-pointer [&.active]:text-secondary duration-300">Message</li>
+            </ul>
+            <button>
+              <svg class="mx-auto size-8 2xl:size-11 text-primary" viewBox="0 0 32 33" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect y="0.0322266" width="32" height="32.0775" fill="url(#pattern0_163_201)"></rect>
+                <defs>
+                <pattern id="pattern0_163_201" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0_163_201" transform="matrix(0.0100242 0 0 0.01 -0.00121164 0)"></use>
+                </pattern>
+                <image id="image0_163_201" width="100" height="100" xlink:href="data:image/png;base64,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"></image>
+                </defs>
+                </svg>
+            </button>
+          </div>
+        </div>
+        <div class="bg-white mt-5 2xl:mt-7">
+            <div class="pt-5 px-5 2xl:px-8 2xl:pt-8">
+                <div class="flex flex-wrap -mx-4 gap-y-4">
+                  <div class="w-full md:w-5/12 lg:w-4/12 px-4">
+                    <div class="relative">
+                      <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider" class="w-full md:w-[160px] 2xl:w-[225px] flex items-center justify-between px-3 2xl:px-4 py-[11px] 2xl:py-5 rounded-md bg-white shadow-md text-gray-dark" type="button">
+                        
+                        <p class="font-20 font-semibold mr-4 ">All</p>
+                        <svg class="size-3 2xl:size[20px] ml-4" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M15 1L8 8L1 1" stroke="#082020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>   
+                        </button>
+                        <div id="dropdownDivider" class="dropdown-default-position-left hidden bg-white border border-gray-dark/20 w-[160px] 2xl:w-[225px]">
+                            <ul class="" aria-labelledby="dropdownDividerButton">
+                              <li>
+                                <a  class="capitalize block p-3 2xl:p-4 font-16 text-gray-light hover:bg-[#D5E0E0] hover:bg-opacity-30" href="javascript:;">                                   
+                                    all
+                                </a> 
+                              </li> 
+                            </ul>
+                        </div>
+                    </div>
                   </div>
-                  <div class="xl:w-1/3 lg:w-2/4 w-full px-2 2xl:px-4 my-3 lg:my-0">
-                      <div class="flex items-center border px-4 2xl:px-6">
+                  <div class="w-full md:w-7/12 lg:w-8/12 px-4">
+                     <div class="flex items-center gap-y-2 flex-wrap sm:flex-none justify-end w-full">
+                        <div class="min-w-[300px] flex-1 lg:max-w-[421px] 2xl:max-w-[600px] w-full flex items-center border px-4 2xl:px-6">
                           <svg class="size-[18px] 2xl:size[20px]" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <mask id="mask0_29_175" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.5H19.3355V19.4832H0V0.5Z" fill="white"/>
@@ -364,111 +430,68 @@
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M22.6761 24.5002C22.3389 24.5002 22 24.3737 21.7404 24.1206L15.5192 18.0301C15.0019 17.5223 15.0002 16.699 15.5174 16.1912C16.0329 15.6799 16.8715 15.6834 17.3905 16.1877L23.6118 22.28C24.129 22.7878 24.1308 23.6093 23.6135 24.1172C23.3558 24.3737 23.0151 24.5002 22.6761 24.5002Z" fill="#A8A8A8"/>
                             </g>
                             </svg>
-                          <input type="search" class="default-search-input flex-1" placeholder="Search Contact">                                                                        
+                          <input type="search" class="default-search-input flex-1" placeholder="Search...">                                                                        
                       </div>
-                  </div>
-                  <div class="xl:w-1/3 lg:w-1/4 w-full px-4">
-                      <div class="flex items-center justify-end">
-                        
-                      <div class="relative">
-                        <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider" class="flex items-center justify-between px-3 2xl:px-4 py-[11px] 2xl:py-5 rounded-md bg-white shadow-md text-gray-dark" type="button">
-                          <div class="flex items-center space-x-3">
-                            <svg class="size-4 2xl:size[20px]" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M5.81973 1.50005L5.81973 13.5" stroke="#082020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M1 6.33984L5.81918 1.49986L10.6392 6.33984" stroke="#082020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M15.4589 13.5L15.4589 1.5" stroke="#082020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M10.6392 8.66016L15.4583 13.5001L20.2783 8.66016" stroke="#082020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <p class="font-20 font-semibold mr-4 border-l pl-4">Name</p>
-                          </div>
-                          <svg class="size-3 2xl:size[20px] ml-4" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 1L8 8L1 1" stroke="#082020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>   
+                      <div class="flex items-center">
+                        <div class="ml-4 flex items-center justify-center">
+                          <button>
+                            <svg class="size-6 2xl:size-7" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M14.0547 23.3074H1.05469" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M16.8848 5.42754H29.8848" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.7305 5.32803C9.7305 2.93799 7.77585 1 5.36525 1C2.95466 1 1 2.93799 1 5.32803C1 7.71807 2.95466 9.65606 5.36525 9.65606C7.77585 9.65606 9.7305 7.71807 9.7305 5.32803Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M30.5557 23.2353C30.5557 20.8452 28.6025 18.9072 26.192 18.9072C23.7799 18.9072 21.8252 20.8452 21.8252 23.2353C21.8252 25.6253 23.7799 27.5633 26.192 27.5633C28.6025 27.5633 30.5557 25.6253 30.5557 23.2353Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
                           </button>
-                          <div id="dropdownDivider" class="dropdown-default-position hidden bg-white border border-gray-dark/20 w-[160px] 2xl:w-[225px]">
-                              <ul class="" aria-labelledby="dropdownDividerButton">
-                                <li>
-                                  <a  class="capitalize block p-3 2xl:p-4 font-16 text-gray-light hover:bg-[#D5E0E0] hover:bg-opacity-30" href="javascript:;">                                   
-                                      name 
-                                  </a> 
-                                </li> 
-                                <li>
-                                  <a  class="capitalize block p-3 2xl:p-4 font-16 text-gray-light hover:bg-[#D5E0E0] hover:bg-opacity-30" href="javascript:;">                                   
-                                      Email 
-                                  </a> 
-                                </li> 
-                                <li>
-                                  <a  class="capitalize block p-3 2xl:p-4 font-16 text-gray-light hover:bg-[#D5E0E0] hover:bg-opacity-30" href="javascript:;">                                   
-                                      Date Added 
-                                  </a> 
-                                </li>
-                                 <li>
-                                  <a  class="capitalize block p-3 2xl:p-4 font-16 text-gray-light hover:bg-[#D5E0E0] hover:bg-opacity-30" href="javascript:;">                                   
-                                      They Owe 
-                                  </a> 
-                                </li> 
-                                <li>
-                                  <a  class="capitalize block p-3 2xl:p-4 font-16 text-gray-light hover:bg-[#D5E0E0] hover:bg-opacity-30" href="javascript:;">                                   
-                                      You Owe 
-                                  </a> 
-                                </li>
-                              </ul>
-                              <div class="border-t">
-                                <a  class="flex items-center space-x-3 p-3 2xl:p-4 font-16 text-gray-light hover:bg-[#D5E0E0] hover:bg-opacity-30" href="javascript:;">                                   
-                                  <svg class="size-4 2xl:size-5" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.81973 1.50005L5.81973 13.5" stroke="#082020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M1 6.33984L5.81918 1.49986L10.6392 6.33984" stroke="#082020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M15.4589 13.5L15.4589 1.5" stroke="#082020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M10.6392 8.66016L15.4583 13.5001L20.2783 8.66016" stroke="#082020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </svg>
-                                  <p class="text-gray-dark font-18">Reverse</p>
-                                </a> 
-                              </div>
-                          </div>
-                      </div>
-
-                      </div>
-                  </div>
-              </div>
-            </div>
-            <div class="py-5 px-5 2xl:px-6 2xl:py-6 border-b">
-                <div class="flex flex-wrap items-center -mx-4">
-                  <div class="w-1/2 px-4">
-                      <h6 class="font-light font-18 text-gray-light">2 Contacts Selected</h6>
-                  </div>
-                  <div class="w-1/2 px-4">
-                      <div class="flex items-center justify-end">
-                          <a class="flex items-center space-x-3 pr-4" href="javascript:;">
-                              <p class="text-gray-dark font-20 font-semibold">Export</p>
-                              <svg class="size-4 2xl:size-6" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14.7335 1.02995L14.7335 17.8125" stroke="#082020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M18.7881 5.11035L14.7336 1.02935L10.6792 5.11035" stroke="#082020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M21.1752 10.6338H22.4724C25.3019 10.6338 27.5947 12.9321 27.5947 15.7699L27.5947 22.5771C27.5947 25.4065 25.3075 27.6993 22.485 27.6993L6.99574 27.6993C4.16625 27.6993 1.87207 25.3995 1.87207 22.5632L1.87207 15.7545C1.87207 12.9266 4.16069 10.6338 6.98184 10.6338H8.29161" stroke="#082020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                              </svg>                                        
-                          </a>
-                          <a class="flex items-center space-x-3 border-l pl-4" href="javascript:;">
-                              <p class="text-gray-dark font-20 font-semibold">Archive</p>
-                              <svg class="size-5 2xl:size-6" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <rect y="0.0322266" width="32" height="32.0775" fill="url(#pattern0_163_201)"/>
+                        </div>
+                        
+                        <div class="ml-4 flex items-center justify-center">
+                          <button>
+                              <svg class="size-7 2xl:size-7" viewBox="0 0 41 35" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <mask id="mask0_70_1037" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="41" height="35">
+                                <rect width="41" height="35" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_70_1037)">
+                                <rect x="-4" y="-7.87354" width="49" height="48.9319" fill="url(#pattern0_70_1037)"/>
+                                </g>
                                 <defs>
-                                <pattern id="pattern0_163_201" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                <use xlink:href="#image0_163_201" transform="matrix(0.0100242 0 0 0.01 -0.00121164 0)"/>
+                                <pattern id="pattern0_70_1037" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_70_1037" transform="matrix(0.01 0 0 0.0100139 0 -0.000695396)"/>
                                 </pattern>
-                                <image id="image0_163_201" width="100" height="100" xlink:href="data:image/png;base64,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"/>
+                                <image id="image0_70_1037" width="100" height="100" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAACtklEQVR4nO3dTU4UQRiH8ZLFVEGiRl0NGep9m3AaPy5g1AUkXsFo3Kk3cK17vIMfiSEuIAYP4EZXkIzeQFOGhQk21J+uARmeX9Lbrky99MOuKgQAAAAAAAAAwAUXc+5GXXc75rwR3R9e6CfnjT97YeanPYeF5P4gun9O7r94/NAeHOzN/bJXM53E4srKcjT7xBC86g8xum+VPZvJMMqnGN2/MwyXqnCwZ9Z2GuPxUjL7wjD8ZIk22w2TyWKzeST3pwzDh/2/NHvcZhpmKZn9PGbBr9F9e8Az/efnbrY38L2HH7O9nrRMh7y37MEx6foR1tbi4HmMuu7OEQu9Taureega0Wyz5/0vQ2PlnT3D32zwbkvu7/r2a5TzrcE/ILq/6PvrvZrztcELzNFAiiuTyfVott/zlTwPQyX31z0/4E1oZJ4GUpS96fk9r8J52Kx5G0ia5RoMRMdABHwhFUiWgGTpSJaAZFUgWQKSpSNZApJVgWQJSJaOZAlIVgWSJSBZOpIlIFkVSJaAZOlIloBkVSBZApKlI1kCklWBZAlIlo5kCUhWBZIlIFk6kiUgWRVIloBk6UiWgGRVIFkCkqUjWQKSVYFkCUiWjmQJSFYFkiUgWTqSJSBZFUiWgGTpSJaAZFUgWQKSpSNZApJVgWQJSJaOZAlIVgWSJSBZOpIlIFkVSJaAQzD/t0MwjzgmthyJOniBOftCLi8v3+g9Jtbs2eAFyp0Yvac1m71vcV/GvAwklgsLzD70HqRsdnP4L+Co8e1GR41Pmxw1XiSzJ0ctxuM1e/AoNL6uYpeN9xPfuNP0uoqCC138ZMMw+9b+Qpe/rzxy3+JL8dov4+NSzuMwYwup6+5F9x0G432D2Elmd0MIl8JpKneHlDsxotn6mV9b52f8mK2XvWhxnwoAAAAAAAAAIJxzvwERGG1OzT4IngAAAABJRU5ErkJggg=="/>
                                 </defs>
-                                </svg>                                                                               
-                          </a>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="ml-4 flex items-center justify-center">
+                          <button>
+                            <svg class="size-6 2xl:size-7" viewBox="0 0 29 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M20.0525 25.0186H8.72266C8.39114 25.0186 8.07319 25.1503 7.83877 25.3847C7.60435 25.6191 7.47266 25.937 7.47266 26.2686C7.47266 26.6001 7.60435 26.918 7.83877 27.1524C8.07319 27.3869 8.39114 27.5186 8.72266 27.5186H20.0525C20.384 27.5186 20.702 27.3869 20.9364 27.1524C21.1708 26.918 21.3025 26.6001 21.3025 26.2686C21.3025 25.937 21.1708 25.6191 20.9364 25.3847C20.702 25.1503 20.384 25.0186 20.0525 25.0186Z" fill="#082020"/>
+                              <path d="M20.0525 18.9717H8.72266C8.39114 18.9717 8.07319 19.1034 7.83877 19.3378C7.60435 19.5722 7.47266 19.8902 7.47266 20.2217C7.47266 20.5532 7.60435 20.8711 7.83877 21.1056C8.07319 21.34 8.39114 21.4717 8.72266 21.4717H20.0525C20.384 21.4717 20.702 21.34 20.9364 21.1056C21.1708 20.8711 21.3025 20.5532 21.3025 20.2217C21.3025 19.8902 21.1708 19.5722 20.9364 19.3378C20.702 19.1034 20.384 18.9717 20.0525 18.9717Z" fill="#082020"/>
+                              <path d="M20.0524 12.9243H15.7295C15.398 12.9243 15.08 13.056 14.8456 13.2904C14.6112 13.5249 14.4795 13.8428 14.4795 14.1743C14.4795 14.5058 14.6112 14.8238 14.8456 15.0582C15.08 15.2926 15.398 15.4243 15.7295 15.4243H20.0524C20.3839 15.4243 20.7019 15.2926 20.9363 15.0582C21.1707 14.8238 21.3024 14.5058 21.3024 14.1743C21.3024 13.8428 21.1707 13.5249 20.9363 13.2904C20.7019 13.056 20.3839 12.9243 20.0524 12.9243Z" fill="#082020"/>
+                              <path d="M22.0327 4.73248C22.0124 4.21414 21.7929 3.72361 21.42 3.36307C21.047 3.00253 20.5493 2.79979 20.0306 2.79707H18.0693C17.894 2.13509 17.5528 1.52872 17.0781 1.03518C16.7283 0.693597 16.3132 0.426024 15.8577 0.248447C15.4021 0.0708705 14.9155 -0.0130671 14.4267 0.00164834C13.574 -0.0202852 12.7383 0.242679 12.0518 0.748955C11.3652 1.25523 10.8671 1.97593 10.636 2.79707H8.66991C8.15153 2.79989 7.6542 3.00246 7.28137 3.36264C6.90855 3.72282 6.68895 4.21287 6.66825 4.73085C4.70977 5.02209 2.93474 6.04559 1.70154 7.59468C0.468345 9.14378 -0.131155 11.1031 0.0240801 13.077V26.4852C-0.053834 27.6071 0.106469 28.7327 0.494459 29.7882C0.88245 30.8438 1.48935 31.8053 2.2753 32.6096C3.06125 33.4139 4.00846 34.0428 5.05473 34.4551C6.101 34.8674 7.22265 35.0536 8.34601 35.0017L20.4196 34.9968C21.5371 35.0392 22.6511 34.846 23.6892 34.4298C24.7272 34.0136 25.6661 33.3837 26.4448 32.581C27.2235 31.7783 27.8246 30.8207 28.2091 29.7705C28.5935 28.7203 28.7528 27.601 28.6764 26.4852V13.077C28.8161 11.1066 28.2109 9.15557 26.9805 7.6102C25.7502 6.06483 23.9844 5.03781 22.0327 4.73248ZM9.15005 5.29707H11.6452C11.9598 5.29433 12.262 5.17423 12.4926 4.96032C12.7232 4.74641 12.8656 4.45409 12.8919 4.14065C12.8819 3.72081 13.0371 3.31383 13.3242 3.0073C13.6112 2.70076 14.0072 2.51919 14.4267 2.50165C14.6184 2.50499 14.8073 2.54873 14.9809 2.63002C15.1546 2.71131 15.3091 2.82832 15.4344 2.9734C15.5598 3.11848 15.6531 3.28837 15.7083 3.47197C15.7635 3.65558 15.7794 3.84876 15.7549 4.03892C15.7537 4.20379 15.7851 4.36727 15.8474 4.51993C15.9097 4.67258 16.0016 4.8114 16.1178 4.92836C16.234 5.04533 16.3722 5.13813 16.5245 5.20141C16.6767 5.26469 16.84 5.2972 17.0049 5.29707H19.5504V6.7554C19.5515 6.84114 19.5185 6.9238 19.4587 6.98527C19.3989 7.04673 19.3172 7.082 19.2314 7.08335H9.46906C9.38332 7.082 9.30161 7.04673 9.24182 6.98527C9.18202 6.9238 9.14902 6.84114 9.15005 6.7554V5.29707ZM26.1764 26.4852C26.2621 27.2744 26.174 28.0728 25.9181 28.8243C25.6623 29.5758 25.245 30.2622 24.6955 30.8351C24.1461 31.4081 23.4778 31.8538 22.7377 32.1408C21.9975 32.4279 21.2035 32.5494 20.4114 32.4968L8.34601 32.5017C7.54906 32.5624 6.74852 32.4467 6.00131 32.163C5.2541 31.8793 4.57858 31.4344 4.02277 30.8601C3.46697 30.2857 3.04454 29.5959 2.78551 28.8398C2.52648 28.0837 2.43722 27.2797 2.52408 26.4852V13.077C2.39691 11.7663 2.7505 10.454 3.51898 9.38456C4.28747 8.31515 5.41846 7.56151 6.70131 7.26402C6.81886 7.91313 7.16008 8.50057 7.6657 8.92426C8.17132 9.34796 8.80939 9.58115 9.46906 9.58332H19.2314C19.8938 9.58102 20.5343 9.34571 21.0407 8.91861C21.547 8.4915 21.8869 7.89985 22.0008 7.2473C23.287 7.5445 24.4206 8.30053 25.1893 9.37371C25.958 10.4469 26.309 11.7636 26.1764 13.077V26.4852Z" fill="#082020"/>
+                              </svg>
+                          </button>
+                        </div>
+                       
+                        <div class="ml-1">
+                          <button>
+                            <svg class="size-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 font-semibold">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"></path>
+                            </svg>
+                          </button>
+                        </div>
+                       </div>
                       </div>
                   </div>
               </div>
             </div>
-            <div class="px-5 2xl:px-6 py-2.5 2xl:py-4">
+            <div class="px-5 2xl:px-8 py-5 2xl:py-8">
               <div class="overflow-x-scroll">
-                <table class="w-full border-separate border-spacing-y-2">
+                <table class="w-full border-separate border-spacing-y-0">
                   <thead class="whitespace-nowrap">
-                    <tr>
-                      <th class="w-8/12 pb-2.5 2xl:pb-4">
-                        <div class="flex items-center pl-5 2xl:pl-7 space-x-3 2xl:space-x-5">
+                    <tr class="capitalize [&>*:first-child]:border-l [&>*:last-child]:border-r *:border-t *:border-b">
+                      <th class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <div class="flex items-center space-x-3 2xl:space-x-5">
                           <label class="flex group/check">
                             
                             <span class="all-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center size-[20px] 2xl:size-[30px] border border-gray-light rounded-md">
@@ -476,44 +499,95 @@
                               <input class="border-[1.5px] border-gray-dark hidden" id="" name="" type="checkbox">
                             </span>
                           </label>
-                          <label for="contact" class="font-20 font-semibold text-gray-dark">Contact</label>
+                          <label for="contact" class="font-20 font-semibold text-gray-dark">Type</label>
                         </div>
                       </th>
-                      <th class="max-w-[400px] pb-2.5 2xl:pb-4">
-                        <div class="flex items-center space-x-40 text-gray-dark font-semibold font-20 pr-6">
-                            <p>They Owe</p>
+                      <th class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <div class="flex items-center text-gray-dark font-semibold font-24">
+                            number
                         </div>
                       </th>
-                      <th class="max-w-[400px] pb-2.5 2xl:pb-4">
-                        <div class="flex items-center space-x-40 text-gray-dark font-semibold font-20 pr-6">
-                            <p>You Owe</p>
+                      <th class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <div class="flex items-center text-gray-dark font-semibold font-24">
+                            reference
                         </div>
                       </th>
-                      <th class="pb-2.5 2xl:pb-4">
+                      <th class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <div class="flex items-center text-gray-dark font-semibold font-24">
+                            issue date
+                        </div>
+                      </th>
+                      <th class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <div class="flex items-center text-gray-dark font-semibold font-24">
+                            paid date
+                        </div>
+                      </th>
+                      <th class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <div class="flex items-center text-gray-dark font-semibold font-24">
+                            Amount due
+                        </div>
+                      </th>
+                      <th class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <div class="flex items-center text-gray-dark font-semibold font-24">
+                            total
+                        </div>
+                      </th>
+                      <th class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <div class="flex items-center text-gray-dark font-semibold font-24">
+                            status
+                        </div>
+                      </th>
+                      <th class="px-5 py-5 2xl:px-7 2xl:py-7">
                        
                       </th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="table-row [&>*:first-child]:border-l [&>*:last-child]:border-r *:border-t *:border-b *:border-white">
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6">
-                        <div class="flex space-x-3 2xl:space-x-5">
-                          <label class="flex group/check">
-                           
-                            <span class="mt-1 2xl:mt-0 sub-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center size-[20px] 2xl:size-[30px] border border-gray-light rounded-md">
+                    <tr class="table-row [&>*:first-child]:border-l [&>*:last-child]:border-r *:border-t *:border-b">
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <div class="group/check flex space-x-3 2xl:space-x-5">
+                          <label class="flex">
+                            <span class="sub-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center size-[20px] 2xl:size-[30px] border border-gray-light rounded-md">
                               <svg class="size-3 2xl:size-5 text-white group-has-[input:checked]/check:block hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
-                              <input class="border-[1.5px] border-gray-dark hidden" id="" name="" type="checkbox" checked>
+                              <input class="border-[1.5px] border-gray-dark hidden" id="" name="" type="checkbox">
                             </span>
                           </label>
-                            <div>
-                              <p class="text-gray-dark font-20 group-[.active]:text-default-green name font-semibold">Robert Dewayne</p>
-                              <p class="text-gray-light font-16 mt-2.5 group-[.active]:text-default-green email opacity-70">raquibapk@gmail.com</p>
-                            </div>
+                          <div class="flex items-center space-x-2">
+                            <svg class="group-has-[input:checked]/check:text-default-green size-[12px] 2xl:size-5 text-gray-light" viewBox="0 0 14 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6.36328 9.28516C6.1875 8.72266 6.22266 7.63281 6.29297 7.63281C6.60938 7.63281 6.57422 8.93359 6.36328 9.28516ZM6.32812 10.9375C6.64453 11.5352 7.10156 12.0273 7.52344 12.3789C6.67969 12.5195 5.97656 12.8711 5.30859 13.1172C5.69531 12.4492 6.04688 11.6406 6.32812 10.9375ZM3.02344 15.332C3.19922 14.7695 4.00781 14.1367 4.25391 13.8906C3.48047 15.1211 3.02344 15.332 3.02344 15.332ZM8.71875 5.875H13.5V17.4062C13.5 17.8984 13.1133 18.25 12.6562 18.25H0.84375C0.351562 18.25 0 17.8984 0 17.4062V1.09375C0 0.636719 0.351562 0.25 0.84375 0.25H7.875V5.03125C7.875 5.52344 8.22656 5.875 8.71875 5.875ZM8.4375 11.9219C7.73438 11.5 7.24219 10.9023 6.92578 10.0234C7.06641 9.39062 7.3125 8.40625 7.13672 7.77344C6.96094 6.75391 5.66016 6.85938 5.44922 7.52734C5.27344 8.19531 5.44922 9.10938 5.73047 10.2344C5.34375 11.2188 4.74609 12.5195 4.32422 13.2578C4.28906 13.2578 4.28906 13.2578 4.28906 13.2578C3.33984 13.75 1.72266 14.8398 2.39062 15.6484C2.56641 15.8945 2.95312 16 3.12891 16C3.76172 16 4.39453 15.3672 5.27344 13.8555C6.1875 13.5391 7.20703 13.1523 8.05078 13.0117C8.82422 13.4336 9.73828 13.7148 10.3008 13.7148C11.3555 13.7148 11.4258 12.5898 11.0039 12.168C10.5117 11.7109 9.10547 11.8516 8.4375 11.9219ZM13.2539 3.94141C13.3945 4.11719 13.5 4.32812 13.5 4.53906V4.75H9V0.25H9.21094C9.42188 0.25 9.63281 0.355469 9.80859 0.496094L13.2539 3.94141ZM10.6172 12.9414C10.6172 12.9414 10.4414 13.1875 9.14062 12.625C10.5469 12.5195 10.793 12.8359 10.6172 12.9414Z" fill="currentColor"/>
+                              </svg>
+                            <p class="text-gray-light font-18 group-[.active]:text-default-green name">Invoice</p>
+                          </div>
                         </div>
                       </td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6"></td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6"></td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6">
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">lw-000076543</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name"></p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">15 Jan 2023</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">15 Jan 2023</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">8,400.00</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">8,400.00</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="flex items-center space-x-2 font-18 text-default-green name">
+                          <svg class="size-[15px] 2xl:size-[20px]" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="10" cy="9.98611" rx="10" ry="9.98611" fill="#27AE60"/>
+                            <path d="M6 10.359L8.374 12.7287L13.12 7.98926" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="capitalize">paid</span>                          
+                        </p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
                         <div class="relative flex items-center justify-end">
                           <button class="flex items-center justify-center !size-[16px] 2xl:!size-[26px]" id="table-dropdown" data-dropdown-toggle="table-dropdowntabelAction">
                             <svg class=" h-full text-gray-light tableActionicon" viewBox="0 0 6 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -562,25 +636,52 @@
                         </div>
                       </td>
                     </tr>
-                    <tr class="table-row [&>*:first-child]:border-l [&>*:last-child]:border-r *:border-t *:border-b *:border-white">
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6">
-                        <div class="flex space-x-3 2xl:space-x-5">
-                          <label class="flex group/check">
-                            
-                            <span class="mt-1 2xl:mt-0 sub-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center size-[20px] 2xl:size-[30px] border border-gray-light rounded-md">
+                    <tr class="table-row [&>*:first-child]:border-l [&>*:last-child]:border-r *:border-t *:border-b">
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <div class="group/check flex items-center space-x-3 2xl:space-x-5">
+                          <label class="flex">
+                           
+                            <span class="sub-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center size-[20px] 2xl:size-[30px] border border-gray-light rounded-md">
                               <svg class="size-3 2xl:size-5 text-white group-has-[input:checked]/check:block hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                               <input class="border-[1.5px] border-gray-dark hidden" id="" name="" type="checkbox">
                             </span>
                           </label>
-                            <div>
-                              <p class="text-gray-dark font-20 group-[.active]:text-default-green name font-semibold">lorem ipsum</p>
-                              <p class="text-gray-light font-16 mt-2.5 group-[.active]:text-default-green email opacity-70">raquibapk@gmail.com</p>
-                            </div>
+                          <div class="flex items-center space-x-2">
+                            <svg class="group-has-[input:checked]/check:text-default-green size-[12px] 2xl:size-5 text-gray-light" viewBox="0 0 14 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6.36328 9.28516C6.1875 8.72266 6.22266 7.63281 6.29297 7.63281C6.60938 7.63281 6.57422 8.93359 6.36328 9.28516ZM6.32812 10.9375C6.64453 11.5352 7.10156 12.0273 7.52344 12.3789C6.67969 12.5195 5.97656 12.8711 5.30859 13.1172C5.69531 12.4492 6.04688 11.6406 6.32812 10.9375ZM3.02344 15.332C3.19922 14.7695 4.00781 14.1367 4.25391 13.8906C3.48047 15.1211 3.02344 15.332 3.02344 15.332ZM8.71875 5.875H13.5V17.4062C13.5 17.8984 13.1133 18.25 12.6562 18.25H0.84375C0.351562 18.25 0 17.8984 0 17.4062V1.09375C0 0.636719 0.351562 0.25 0.84375 0.25H7.875V5.03125C7.875 5.52344 8.22656 5.875 8.71875 5.875ZM8.4375 11.9219C7.73438 11.5 7.24219 10.9023 6.92578 10.0234C7.06641 9.39062 7.3125 8.40625 7.13672 7.77344C6.96094 6.75391 5.66016 6.85938 5.44922 7.52734C5.27344 8.19531 5.44922 9.10938 5.73047 10.2344C5.34375 11.2188 4.74609 12.5195 4.32422 13.2578C4.28906 13.2578 4.28906 13.2578 4.28906 13.2578C3.33984 13.75 1.72266 14.8398 2.39062 15.6484C2.56641 15.8945 2.95312 16 3.12891 16C3.76172 16 4.39453 15.3672 5.27344 13.8555C6.1875 13.5391 7.20703 13.1523 8.05078 13.0117C8.82422 13.4336 9.73828 13.7148 10.3008 13.7148C11.3555 13.7148 11.4258 12.5898 11.0039 12.168C10.5117 11.7109 9.10547 11.8516 8.4375 11.9219ZM13.2539 3.94141C13.3945 4.11719 13.5 4.32812 13.5 4.53906V4.75H9V0.25H9.21094C9.42188 0.25 9.63281 0.355469 9.80859 0.496094L13.2539 3.94141ZM10.6172 12.9414C10.6172 12.9414 10.4414 13.1875 9.14062 12.625C10.5469 12.5195 10.793 12.8359 10.6172 12.9414Z" fill="currentColor"/>
+                              </svg>
+                            <p class="text-gray-light font-18 group-[.active]:text-default-green name">Invoice</p>
+                          </div>
                         </div>
                       </td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6"></td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6"></td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6">
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">lw-000076543</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name"></p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">15 Jan 2023</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">15 Jan 2023</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">8,400.00</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">8,400.00</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="flex items-center space-x-2 font-18 text-default-green name">
+                          <svg class="size-[15px] 2xl:size-[20px]" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="10" cy="9.98611" rx="10" ry="9.98611" fill="#27AE60"/>
+                            <path d="M6 10.359L8.374 12.7287L13.12 7.98926" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="capitalize">paid</span>                          
+                        </p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
                         <div class="relative flex items-center justify-end">
                           <button class="flex items-center justify-center !size-[16px] 2xl:!size-[26px]" id="table-dropdown2" data-dropdown-toggle="table-dropdowntabelAction2">
                             <svg class=" h-full text-gray-light tableActionicon" viewBox="0 0 6 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -608,11 +709,9 @@
                               </li>
                               <li class="border-b last:border-b-0">
                                 <a  class="flex items-center hover:bg-[#D5E0E0] hover:bg-opacity-30 space-x-3 p-3" href="javascript:;">
-                               
-                                    <svg class="size-5 2xl:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                      <path stroke-linecap="round" stroke-linejoin="round" d="m9 13.5 3 3m0 0 3-3m-3 3v-6m1.06-4.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
-                                    </svg>
-                                                                                                       
+                                  <svg class="size-5 2xl:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m9 13.5 3 3m0 0 3-3m-3 3v-6m1.06-4.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                  </svg>                                                                     
                                     <p class="font-18 font-light text-gray-dark">Archive</p>   
                                 </a> 
                               </li>
@@ -631,25 +730,52 @@
                         </div>
                       </td>
                     </tr>
-                    <tr class="table-row [&>*:first-child]:border-l [&>*:last-child]:border-r *:border-t *:border-b *:border-white">
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6">
-                        <div class="flex space-x-3 2xl:space-x-5">
-                          <label class="flex group/check">
-                            
-                            <span class="mt-1 2xl:mt-0 sub-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center size-[20px] 2xl:size-[30px] border border-gray-light rounded-md">
+                    <tr class="table-row [&>*:first-child]:border-l [&>*:last-child]:border-r *:border-t *:border-b">
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <div class="group/check flex items-center space-x-3 2xl:space-x-5">
+                          <label class="flex">
+                           
+                            <span class="sub-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center size-[20px] 2xl:size-[30px] border border-gray-light rounded-md">
                               <svg class="size-3 2xl:size-5 text-white group-has-[input:checked]/check:block hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                               <input class="border-[1.5px] border-gray-dark hidden" id="" name="" type="checkbox">
                             </span>
                           </label>
-                            <div>
-                              <p class="text-gray-dark font-20 group-[.active]:text-default-green name font-semibold">lorem ipsum</p>
-                              <p class="text-gray-light font-16 mt-2.5 group-[.active]:text-default-green email opacity-70">raquibapk@gmail.com</p>
-                            </div>
+                          <div class="flex items-center space-x-2">
+                            <svg class="group-has-[input:checked]/check:text-default-green size-[12px] 2xl:size-5 text-gray-light" viewBox="0 0 14 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6.36328 9.28516C6.1875 8.72266 6.22266 7.63281 6.29297 7.63281C6.60938 7.63281 6.57422 8.93359 6.36328 9.28516ZM6.32812 10.9375C6.64453 11.5352 7.10156 12.0273 7.52344 12.3789C6.67969 12.5195 5.97656 12.8711 5.30859 13.1172C5.69531 12.4492 6.04688 11.6406 6.32812 10.9375ZM3.02344 15.332C3.19922 14.7695 4.00781 14.1367 4.25391 13.8906C3.48047 15.1211 3.02344 15.332 3.02344 15.332ZM8.71875 5.875H13.5V17.4062C13.5 17.8984 13.1133 18.25 12.6562 18.25H0.84375C0.351562 18.25 0 17.8984 0 17.4062V1.09375C0 0.636719 0.351562 0.25 0.84375 0.25H7.875V5.03125C7.875 5.52344 8.22656 5.875 8.71875 5.875ZM8.4375 11.9219C7.73438 11.5 7.24219 10.9023 6.92578 10.0234C7.06641 9.39062 7.3125 8.40625 7.13672 7.77344C6.96094 6.75391 5.66016 6.85938 5.44922 7.52734C5.27344 8.19531 5.44922 9.10938 5.73047 10.2344C5.34375 11.2188 4.74609 12.5195 4.32422 13.2578C4.28906 13.2578 4.28906 13.2578 4.28906 13.2578C3.33984 13.75 1.72266 14.8398 2.39062 15.6484C2.56641 15.8945 2.95312 16 3.12891 16C3.76172 16 4.39453 15.3672 5.27344 13.8555C6.1875 13.5391 7.20703 13.1523 8.05078 13.0117C8.82422 13.4336 9.73828 13.7148 10.3008 13.7148C11.3555 13.7148 11.4258 12.5898 11.0039 12.168C10.5117 11.7109 9.10547 11.8516 8.4375 11.9219ZM13.2539 3.94141C13.3945 4.11719 13.5 4.32812 13.5 4.53906V4.75H9V0.25H9.21094C9.42188 0.25 9.63281 0.355469 9.80859 0.496094L13.2539 3.94141ZM10.6172 12.9414C10.6172 12.9414 10.4414 13.1875 9.14062 12.625C10.5469 12.5195 10.793 12.8359 10.6172 12.9414Z" fill="currentColor"/>
+                              </svg>
+                            <p class="text-gray-light font-18 group-[.active]:text-default-green name">Invoice</p>
+                          </div>
                         </div>
                       </td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6"></td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6"></td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6">
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">lw-000076543</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name"></p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">15 Jan 2023</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">15 Jan 2023</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">8,400.00</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">8,400.00</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="flex items-center space-x-2 font-18 text-default-green name">
+                          <svg class="size-[15px] 2xl:size-[20px]" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="10" cy="9.98611" rx="10" ry="9.98611" fill="#27AE60"/>
+                            <path d="M6 10.359L8.374 12.7287L13.12 7.98926" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="capitalize">paid</span>                          
+                        </p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
                         <div class="relative flex items-center justify-end">
                           <button class="flex items-center justify-center !size-[16px] 2xl:!size-[26px]" id="table-dropdown3" data-dropdown-toggle="table-dropdowntabelAction3">
                             <svg class=" h-full text-gray-light tableActionicon" viewBox="0 0 6 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -659,7 +785,7 @@
                               </svg>
                           </button>
                           <div id="table-dropdowntabelAction3" class="hidden dropdown-default-position-middle w-[130px] 2xl:w-[170px] bg-white border border-gray-dark/20">
-                            <ul aria-labelledby="table-dropdowntabelAction3">
+                            <ul aria-labelledby="table-dropdown3">
                               <li class="border-b last:border-b-0">
                                 <a class="flex items-center hover:bg-[#D5E0E0] hover:bg-opacity-30 space-x-3 p-3" href="javascript:;">
                                   <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -679,7 +805,7 @@
                                 <a  class="flex items-center hover:bg-[#D5E0E0] hover:bg-opacity-30 space-x-3 p-3" href="javascript:;">
                                   <svg class="size-5 2xl:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m9 13.5 3 3m0 0 3-3m-3 3v-6m1.06-4.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
-                                  </svg>                                                                    
+                                  </svg>                                                                     
                                     <p class="font-18 font-light text-gray-dark">Archive</p>   
                                 </a> 
                               </li>
@@ -698,25 +824,54 @@
                         </div>
                       </td>
                     </tr>
-                    <tr class="table-row [&>*:first-child]:border-l [&>*:last-child]:border-r *:border-t *:border-b *:border-white">
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6">
-                        <div class="flex space-x-3 2xl:space-x-5">
-                          <label class="flex group/check">
-                            
-                            <span class="mt-1 2xl:mt-0 sub-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center size-[20px] 2xl:size-[30px] border border-gray-light rounded-md">
+                    <tr class="table-row [&>*:first-child]:border-l [&>*:last-child]:border-r *:border-t *:border-b">
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <div class="group/check flex items-center space-x-3 2xl:space-x-5">
+                          <label class="flex">
+                           
+                            <span class="sub-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center size-[20px] 2xl:size-[30px] border border-gray-light rounded-md">
                               <svg class="size-3 2xl:size-5 text-white group-has-[input:checked]/check:block hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
-                              <input class="border-[1.5px] border-gray-dark hidden" checked id="" name="" type="checkbox">
+                              <input class="border-[1.5px] border-gray-dark hidden" id="" name="" type="checkbox">
                             </span>
                           </label>
-                            <div>
-                              <p class="text-gray-dark font-20 group-[.active]:text-default-green name font-semibold">lorem ipsum</p>
-                              <p class="text-gray-light font-16 mt-2.5 group-[.active]:text-default-green email opacity-70">raquibapk@gmail.com</p>
-                            </div>
+                          <div class="flex items-center space-x-2">
+                            <svg class="group-has-[input:checked]/check:text-default-green size-[12px] 2xl:size-5 text-gray-light" viewBox="0 0 14 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6.36328 9.28516C6.1875 8.72266 6.22266 7.63281 6.29297 7.63281C6.60938 7.63281 6.57422 8.93359 6.36328 9.28516ZM6.32812 10.9375C6.64453 11.5352 7.10156 12.0273 7.52344 12.3789C6.67969 12.5195 5.97656 12.8711 5.30859 13.1172C5.69531 12.4492 6.04688 11.6406 6.32812 10.9375ZM3.02344 15.332C3.19922 14.7695 4.00781 14.1367 4.25391 13.8906C3.48047 15.1211 3.02344 15.332 3.02344 15.332ZM8.71875 5.875H13.5V17.4062C13.5 17.8984 13.1133 18.25 12.6562 18.25H0.84375C0.351562 18.25 0 17.8984 0 17.4062V1.09375C0 0.636719 0.351562 0.25 0.84375 0.25H7.875V5.03125C7.875 5.52344 8.22656 5.875 8.71875 5.875ZM8.4375 11.9219C7.73438 11.5 7.24219 10.9023 6.92578 10.0234C7.06641 9.39062 7.3125 8.40625 7.13672 7.77344C6.96094 6.75391 5.66016 6.85938 5.44922 7.52734C5.27344 8.19531 5.44922 9.10938 5.73047 10.2344C5.34375 11.2188 4.74609 12.5195 4.32422 13.2578C4.28906 13.2578 4.28906 13.2578 4.28906 13.2578C3.33984 13.75 1.72266 14.8398 2.39062 15.6484C2.56641 15.8945 2.95312 16 3.12891 16C3.76172 16 4.39453 15.3672 5.27344 13.8555C6.1875 13.5391 7.20703 13.1523 8.05078 13.0117C8.82422 13.4336 9.73828 13.7148 10.3008 13.7148C11.3555 13.7148 11.4258 12.5898 11.0039 12.168C10.5117 11.7109 9.10547 11.8516 8.4375 11.9219ZM13.2539 3.94141C13.3945 4.11719 13.5 4.32812 13.5 4.53906V4.75H9V0.25H9.21094C9.42188 0.25 9.63281 0.355469 9.80859 0.496094L13.2539 3.94141ZM10.6172 12.9414C10.6172 12.9414 10.4414 13.1875 9.14062 12.625C10.5469 12.5195 10.793 12.8359 10.6172 12.9414Z" fill="currentColor"/>
+                              </svg>
+                            <p class="text-gray-light font-18 group-[.active]:text-default-green name">Invoice</p>
+                          </div>
                         </div>
                       </td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6"></td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6"></td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6">
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">lw-000076543</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name"></p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">15 Jan 2023</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">15 Jan 2023</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">8,400.00</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">8,400.00</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="flex items-center space-x-2 font-18 !text-red1">
+                           <svg class="size-[15px] 2xl:size-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <ellipse cx="10" cy="9.98611" rx="10" ry="9.98611" fill="#EB5757"/>
+                              <path d="M13 12.9819L7 6.99023" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M13 6.99027L7 12.9819" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            
+                            <span class="capitalize">overdue</span>                          
+                        </p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
                         <div class="relative flex items-center justify-end">
                           <button class="flex items-center justify-center !size-[16px] 2xl:!size-[26px]" id="table-dropdown4" data-dropdown-toggle="table-dropdowntabelAction4">
                             <svg class=" h-full text-gray-light tableActionicon" viewBox="0 0 6 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -729,7 +884,7 @@
                             <ul aria-labelledby="table-dropdown4">
                               <li class="border-b last:border-b-0">
                                 <a class="flex items-center hover:bg-[#D5E0E0] hover:bg-opacity-30 space-x-3 p-3" href="javascript:;">
-                                  <svg class="size-5 2xl:size-6" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <mask id="mask0_105_3429" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="18" height="19">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0.000976562 0H17.1816V18.9395H0.000976562V0Z" fill="white"/>
                                     </mask>
@@ -746,7 +901,101 @@
                                 <a  class="flex items-center hover:bg-[#D5E0E0] hover:bg-opacity-30 space-x-3 p-3" href="javascript:;">
                                   <svg class="size-5 2xl:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m9 13.5 3 3m0 0 3-3m-3 3v-6m1.06-4.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
-                                  </svg>                                                                  
+                                  </svg>                                                                     
+                                    <p class="font-18 font-light text-gray-dark">Archive</p>   
+                                </a> 
+                              </li>
+                              <li class="border-b last:border-b-0">
+                                <a  class="flex items-center hover:bg-[#D5E0E0] hover:bg-opacity-30 space-x-3 p-3" href="javascript:;">
+                                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.784 18.9999C7.49673 18.9999 6.24176 18.9856 5.00009 18.96C3.41167 18.9286 2.3125 17.8988 2.13295 16.2724C1.8337 13.5744 1.32164 7.21496 1.31689 7.15131C1.28459 6.75896 1.57719 6.41505 1.96955 6.3837C2.35621 6.37325 2.70581 6.64496 2.73716 7.03636C2.74191 7.10096 3.25302 13.4385 3.54942 16.1156C3.65107 17.04 4.14983 17.5169 5.02955 17.535C7.40458 17.5853 9.82807 17.5882 12.4406 17.5407C13.3754 17.5226 13.8808 17.0552 13.9853 16.109C14.2798 13.4547 14.7928 7.10096 14.7985 7.03636C14.8299 6.64496 15.1766 6.37135 15.5652 6.3837C15.9576 6.416 16.2502 6.75896 16.2188 7.15131C16.2131 7.21591 15.6982 13.5915 15.4018 16.2657C15.2175 17.9254 14.1212 18.9353 12.4663 18.9657C11.1999 18.9875 9.97817 18.9999 8.784 18.9999" fill="#082020"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8229 4.73947H0.712511C0.319205 4.73947 0 4.42027 0 4.02696C0 3.63366 0.319205 3.31445 0.712511 3.31445H16.8229C17.2162 3.31445 17.5354 3.63366 17.5354 4.02696C17.5354 4.42027 17.2162 4.73947 16.8229 4.73947" fill="#082020"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.719 4.73962C12.6379 4.73962 11.6993 3.96916 11.4865 2.90894L11.2556 1.75373C11.2072 1.57797 11.0067 1.42502 10.7787 1.42502H6.7573C6.52929 1.42502 6.32884 1.57797 6.27089 1.79743L6.04954 2.90894C5.83768 3.96916 4.89812 4.73962 3.817 4.73962C3.4237 4.73962 3.10449 4.42042 3.10449 4.02711C3.10449 3.6338 3.4237 3.3146 3.817 3.3146C4.22171 3.3146 4.57321 3.0258 4.65302 2.62869L4.88387 1.47347C5.11852 0.588059 5.88518 0 6.7573 0H10.7787C11.6508 0 12.4175 0.588059 12.6426 1.43072L12.8839 2.62869C12.9628 3.0258 13.3143 3.3146 13.719 3.3146C14.1123 3.3146 14.4315 3.6338 14.4315 4.02711C14.4315 4.42042 14.1123 4.73962 13.719 4.73962" fill="#082020"/>
+                                    </svg>                                                                             
+                                    <p class="font-18 font-light text-gray-dark">Delete</p>   
+                                </a> 
+                              </li>
+                            </ul>
+                          </div> 
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="table-row [&>*:first-child]:border-l [&>*:last-child]:border-r *:border-t *:border-b">
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <div class="group/check flex items-center space-x-3 2xl:space-x-5">
+                          <label class="flex">
+                           
+                            <span class="sub-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center size-[20px] 2xl:size-[30px] border border-gray-light rounded-md">
+                              <svg class="size-3 2xl:size-5 text-white group-has-[input:checked]/check:block hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                              <input class="border-[1.5px] border-gray-dark hidden" id="" name="" type="checkbox">
+                            </span>
+                          </label>
+                          <div class="flex items-center space-x-2">
+                            <svg class="group-has-[input:checked]/check:text-default-green size-[12px] 2xl:size-5 text-gray-light" viewBox="0 0 14 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6.36328 9.28516C6.1875 8.72266 6.22266 7.63281 6.29297 7.63281C6.60938 7.63281 6.57422 8.93359 6.36328 9.28516ZM6.32812 10.9375C6.64453 11.5352 7.10156 12.0273 7.52344 12.3789C6.67969 12.5195 5.97656 12.8711 5.30859 13.1172C5.69531 12.4492 6.04688 11.6406 6.32812 10.9375ZM3.02344 15.332C3.19922 14.7695 4.00781 14.1367 4.25391 13.8906C3.48047 15.1211 3.02344 15.332 3.02344 15.332ZM8.71875 5.875H13.5V17.4062C13.5 17.8984 13.1133 18.25 12.6562 18.25H0.84375C0.351562 18.25 0 17.8984 0 17.4062V1.09375C0 0.636719 0.351562 0.25 0.84375 0.25H7.875V5.03125C7.875 5.52344 8.22656 5.875 8.71875 5.875ZM8.4375 11.9219C7.73438 11.5 7.24219 10.9023 6.92578 10.0234C7.06641 9.39062 7.3125 8.40625 7.13672 7.77344C6.96094 6.75391 5.66016 6.85938 5.44922 7.52734C5.27344 8.19531 5.44922 9.10938 5.73047 10.2344C5.34375 11.2188 4.74609 12.5195 4.32422 13.2578C4.28906 13.2578 4.28906 13.2578 4.28906 13.2578C3.33984 13.75 1.72266 14.8398 2.39062 15.6484C2.56641 15.8945 2.95312 16 3.12891 16C3.76172 16 4.39453 15.3672 5.27344 13.8555C6.1875 13.5391 7.20703 13.1523 8.05078 13.0117C8.82422 13.4336 9.73828 13.7148 10.3008 13.7148C11.3555 13.7148 11.4258 12.5898 11.0039 12.168C10.5117 11.7109 9.10547 11.8516 8.4375 11.9219ZM13.2539 3.94141C13.3945 4.11719 13.5 4.32812 13.5 4.53906V4.75H9V0.25H9.21094C9.42188 0.25 9.63281 0.355469 9.80859 0.496094L13.2539 3.94141ZM10.6172 12.9414C10.6172 12.9414 10.4414 13.1875 9.14062 12.625C10.5469 12.5195 10.793 12.8359 10.6172 12.9414Z" fill="currentColor"/>
+                              </svg>
+                            <p class="text-gray-light font-18 group-[.active]:text-default-green name">Invoice</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">lw-000076543</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name"></p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">15 Jan 2023</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">15 Jan 2023</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">8,400.00</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="text-gray-light font-18 group-[.active]:text-default-green name">8,400.00</p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <p class="flex items-center space-x-2 font-18 text-default-green name">
+                          <svg class="size-[15px] 2xl:size-[20px]" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="10" cy="9.98611" rx="10" ry="9.98611" fill="#27AE60"/>
+                            <path d="M6 10.359L8.374 12.7287L13.12 7.98926" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="capitalize">paid</span>                          
+                        </p>
+                      </td>
+                      <td class="px-5 py-5 2xl:px-7 2xl:py-7">
+                        <div class="relative flex items-center justify-end">
+                          <button class="flex items-center justify-center !size-[16px] 2xl:!size-[26px]" id="table-dropdown5" data-dropdown-toggle="table-dropdowntabelAction5">
+                            <svg class=" h-full text-gray-light tableActionicon" viewBox="0 0 6 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="2.785" cy="2.785" r="2.785" fill="currentColor"/>
+                              <circle cx="2.785" cy="12.9964" r="2.785" fill="currentColor"/>
+                              <circle cx="2.785" cy="23.2083" r="2.785" fill="currentColor"/>
+                              </svg>
+                          </button>
+                          <div id="table-dropdowntabelAction5" class="hidden dropdown-default-position-middle w-[130px] 2xl:w-[170px] bg-white border border-gray-dark/20">
+                            <ul aria-labelledby="table-dropdown5">
+                              <li class="border-b last:border-b-0">
+                                <a class="flex items-center hover:bg-[#D5E0E0] hover:bg-opacity-30 space-x-3 p-3" href="javascript:;">
+                                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask0_105_3429" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="18" height="19">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.000976562 0H17.1816V18.9395H0.000976562V0Z" fill="white"/>
+                                    </mask>
+                                    <g mask="url(#mask0_105_3429)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1113 2.01664L1.69625 13.7916C1.52525 14.0056 1.46225 14.2816 1.52525 14.5466L2.20625 17.4316L5.24525 17.3936C5.53425 17.3906 5.80125 17.2616 5.97825 17.0416C9.19525 13.0166 15.3283 5.34264 15.5023 5.11764C15.6663 4.85164 15.7303 4.47564 15.6443 4.11364C15.5563 3.74264 15.3253 3.42764 14.9923 3.22664C14.9213 3.17764 13.2363 1.86964 13.1843 1.82864C12.5503 1.32064 11.6253 1.40864 11.1113 2.01664V2.01664ZM1.61425 18.9396C1.26725 18.9396 0.965251 18.7016 0.884251 18.3626L0.0652509 14.8916C-0.103749 14.1726 0.0642509 13.4306 0.525251 12.8546L9.94525 1.07264C9.94925 1.06864 9.95225 1.06364 9.95625 1.05964C10.9893 -0.175357 12.8573 -0.357357 14.1173 0.653643C14.1673 0.692643 15.8403 1.99264 15.8403 1.99264C16.4483 2.35464 16.9233 3.00164 17.1033 3.76764C17.2823 4.52564 17.1523 5.30764 16.7353 5.96864C16.7043 6.01764 16.6773 6.05964 7.14925 17.9796C6.69025 18.5516 6.00225 18.8846 5.26325 18.8936L1.62425 18.9396H1.61425Z" fill="#082020"/>
+                                    </g>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.2244 8.68487C14.0644 8.68487 13.9044 8.63387 13.7674 8.52987L8.3154 4.34187C7.9874 4.08987 7.9254 3.61987 8.1774 3.28987C8.4304 2.96187 8.9004 2.90087 9.2294 3.15287L14.6824 7.33987C15.0104 7.59187 15.0724 8.06287 14.8194 8.39187C14.6724 8.58387 14.4494 8.68487 14.2244 8.68487" fill="#082020"/>
+                                    </svg>
+                                    
+                                    <p class="font-18 font-light text-gray-dark">Edit</p>   
+                                </a> 
+                              </li>
+                              <li class="border-b last:border-b-0">
+                                <a  class="flex items-center hover:bg-[#D5E0E0] hover:bg-opacity-30 space-x-3 p-3" href="javascript:;">
+                                  <svg class="size-5 2xl:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m9 13.5 3 3m0 0 3-3m-3 3v-6m1.06-4.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                  </svg>                                                                     
                                     <p class="font-18 font-light text-gray-dark">Archive</p>   
                                 </a> 
                               </li>
@@ -770,7 +1019,7 @@
               </div>
             </div>
         </div>
-        <div class="mt-6">
+        <div class="mt-5 2xl:mt-7">
             <div class="flex flex-wrap justify-end -mx-4">
                 <div class="w-1/3 px-4">
                     <div>
@@ -887,6 +1136,11 @@
        
     }
 
+
+    </script>
+
+    <script>
+
     let allCheck = document.querySelector('.all-check')
     let subCheck = document.querySelectorAll('.sub-check')
 
@@ -913,6 +1167,26 @@
       })
     })
 
+    //  function borderBottomNone(tr){
+    //     let prevTr = tr.nextElementSibling
+    //     let nextTr = tr.nextElementSibling
+
+    //     if(prevTr){
+    //         let input = prevTr.querySelector('.sub-check').querySelector('input')
+    //         let allTd = tr.querySelectorAll('td')
+    //         if(input.checked){
+    //           allTd?.forEach(el=>{
+    //             el.style.borderBottom = '0'
+    //           })
+    //         }else{
+    //           allTd?.forEach(el=>{
+    //             el.style.borderBottom = null
+    //           })
+    //         }
+    //     }
+
+    //     if
+    //  }
     </script>
   </body>
 </html>
