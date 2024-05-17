@@ -5,24 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="./output.css" rel="stylesheet" />
-    <title>Dashboard</title>
+    <title>add new contact</title>
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" /> -->
   </head>
   <body class="bg-[#F0F0F0]">
     <header class="fixed z-50 top-0 left-0 w-full h-[100px] 2xl:h-[140px] bg-white custom-drop-shadow flex items-center">
       <nav class="w-full px-6 2xl:px-7 flex justify-between">
+        <div class="flex items-center space-x-4">
           <a href="index.html" class="flex items-center space-x-3">
             <img class="w-[130px] 2xl:w-[185px]" src="../src/images/consolhq-logo.png" alt="">
-            <svg class="size-4 2xl:size-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <svg class="hidden lg:block size-4 2xl:size-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
             </svg>              
           </a>
+          <button class="collapse-sidebar-button relative w-6 group lg:hidden">
+              <svg class="absolute top-1/2 -translate-y-1/2 w-full opacity-100 group-[.active]:opacity-0 duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg> 
+              <svg class="absolute top-1/2 -translate-y-1/2 w-full opacity-0 group-[.active]:opacity-100 duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+              </svg>
+          </button>
+        </div>
 
           <div class="flex items-center">
             <div class="flex items-center px-2 space-x-1 sm:space-x-3 2xl:space-x-5">
 
               <!-- search -->
-                <div>
+                <div class="hidden sm:block">
                   <button class="size-[30px] sm:size-[40px] 2xl:size-[50px] flex justify-center items-center text-primary">
                     <svg class="size-5 2xl:size-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
@@ -52,7 +62,7 @@
                       </g>
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0488 40.5001H25.046C23.4557 40.4987 21.9506 39.7979 20.8086 38.5254C20.4157 38.0899 20.4511 37.4161 20.8881 37.0245C21.325 36.6302 21.9974 36.6656 22.3904 37.104C23.1252 37.9225 24.0686 38.3722 25.0474 38.3722H25.0488C26.0319 38.3722 26.9795 37.9225 27.7158 37.1025C28.1102 36.667 28.7826 36.6316 29.2181 37.0245C29.655 37.4175 29.6905 38.0913 29.2975 38.5268C28.1513 39.7993 26.6433 40.5001 25.0488 40.5001Z" fill="#1E4D57"/>
                       </svg>
-                    <span class="font-16 absolute top-[-15px] right-[-10px] 2xl:top-[-18px] 2xl:right-[-18px] text-white flex justify-center items-center size-[20px] 2xl:size-[30px] rounded-full mt-2 mr-2 bg-secondary">7</span>                
+                    <span class="font-16 absolute top-[-15px] right-[-10px] 2xl:top-[-18px] 2xl:right-[-18px] text-white flex justify-center items-center checkbox-size rounded-full mt-2 mr-2 bg-secondary">7</span>                
                   </button>
                 </div>
             </div>
@@ -61,7 +71,7 @@
             <div class="pl-3 2xl:pl-6">
               <div class="cursor-pointer flex items-center space-x-4">
                 <img class="size-10 2xl:size-14 rounded-full object-cover object-center" src="../src/images/avatar.jpg" alt="">
-                <div class="flex items-center space-x-3">
+                <div class="hidden sm:flex items-center space-x-3">
                   <div>
                     <div class="font-24 font-semibold text-gray-dark">Shakir alam</div>
                     <p class="font-18 text-gray-light">Super Admin</p>
@@ -76,19 +86,39 @@
       </nav>
     </header>
     <div class="flex">
-      <div id="sidebar" class="z-40 top-0 left-0 lg:top-auto lg:left-auto h-screen pt-[100px] 2xl:pt-[140px] shrink-0 group">
-        <button id="collapse-sidebar-button" class="duration-300 delay-300 absolute top-[calc(100px+24px)] 2xl:top-[calc(140px+48px)] left-full -translate-x-1/2 bg-primary text-white size-4 2xl:size-5 rounded-2xl flex justify-center items-center">
+
+      <div id="overlay" class="z-10 lg:hidden [&.active]:opacity-50 opacity-0 pointer-events-none fixed h-screen w-screen bg-black duration-300"></div>
+
+      <div id="sidebar" class="duration-300 z-40 top-0 left-0 lg:top-auto lg:left-auto h-screen pt-[100px] 2xl:pt-[140px] shrink-0 group">
+        <button class="hidden lg:flex collapse-sidebar-button duration-300 delay-300 absolute top-[calc(100px+24px)] 2xl:top-[calc(140px+48px)] left-full -translate-x-1/2 bg-primary text-white size-4 2xl:size-5 rounded-2xl justify-center items-center">
           <svg class="size-2.5 2xl:size-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
           </svg>
         </button>
-
-        <aside class="sidebar-box-shadow h-full overflow-y-auto group-[.collapse-sidebar]:overflow-y-clip duration-300 shrink-0 w-[215px] 2xl:w-[315px] group-[.collapse-sidebar]:w-[90px] 2xl:group-[.collapse-sidebar]:w-[116px] bg-white group-[.collapse-sidebar]:px-0 px-[20px] py-3 2xl:group-[.collapse-sidebar]:px-0 2xl:px-8 2xl:py-7">
+        <aside class="lg:sidebar-box-shadow h-full overflow-y-auto group-[.collapse-sidebar]:overflow-y-clip duration-300 shrink-0 w-[215px] 2xl:w-[315px] group-[.collapse-sidebar]:w-[90px] 2xl:group-[.collapse-sidebar]:w-[116px] bg-white group-[.collapse-sidebar]:px-0 px-3 lg:px-4 py-3 2xl:group-[.collapse-sidebar]:px-0 2xl:px-8 2xl:py-7">
+          
+          <div class="sm:hidden flex items-center border px-2 mb-4">
+            <svg class="size-4" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <mask id="mask0_29_175" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.5H19.3355V19.4832H0V0.5Z" fill="white"/>
+              </mask>
+              <g mask="url(#mask0_29_175)">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.66805 1.96201C5.15801 1.96201 1.48882 5.56333 1.48882 9.99116C1.48882 14.419 5.15801 18.0213 9.66805 18.0213C14.1771 18.0213 17.8463 14.419 17.8463 9.99116C17.8463 5.56333 14.1771 1.96201 9.66805 1.96201ZM9.66836 19.4832C4.33731 19.4832 0 15.225 0 9.99113C0 4.75727 4.33731 0.5 9.66836 0.5C14.9994 0.5 19.3357 4.75727 19.3357 9.99113C19.3357 15.225 14.9994 19.4832 9.66836 19.4832Z" fill="#A8A8A8"/>
+              </g>
+              <mask id="mask1_29_175" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="15" y="15" width="9" height="10">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1304 15.8086H23.9998V24.5002H15.1304V15.8086Z" fill="white"/>
+              </mask>
+              <g mask="url(#mask1_29_175)">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M22.6761 24.5002C22.3389 24.5002 22 24.3737 21.7404 24.1206L15.5192 18.0301C15.0019 17.5223 15.0002 16.699 15.5174 16.1912C16.0329 15.6799 16.8715 15.6834 17.3905 16.1877L23.6118 22.28C24.129 22.7878 24.1308 23.6093 23.6135 24.1172C23.3558 24.3737 23.0151 24.5002 22.6761 24.5002Z" fill="#A8A8A8"/>
+              </g>
+              </svg>
+            <input type="search" class="default-search-input h-[40px] flex-1" placeholder="Search Contact">                                                                        
+        </div>
           <ul class="space-y-[7px] 2xl:space-y-1.5">
             <li title="dashboard">
               <a href="" class="group-[.collapse-sidebar]:hidden flex items-center justify-between header [&.active]:bg-primary [&.active]:text-white hover:bg-primary hover:text-white duration-300 text-primary 2xl:p-[18px] px-3 py-2 whitespace-nowrap">
                 <span class="flex items-center space-x-3.5 2xl:space-x-5">
-                  <svg class="size-[18px] 2xl:size-[26px]" fill="currentColor" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+                  <svg class="icon-size" fill="currentColor" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M7.71448 19.0261C7.26598 19.0261 6.90198 18.6621 6.90198 18.2136V10.7819C6.90198 10.3334 7.26598 9.96939 7.71448 9.96939C8.16298 9.96939 8.52698 10.3334 8.52698 10.7819V18.2136C8.52698 18.6621 8.16298 19.0261 7.71448 19.0261Z"/>
                     <path d="M7.71448 19.0261C7.26598 19.0261 6.90198 18.6621 6.90198 18.2136V10.7819C6.90198 10.3334 7.26598 9.96939 7.71448 9.96939C8.16298 9.96939 8.52698 10.3334 8.52698 10.7819V18.2136C8.52698 18.6621 8.16298 19.0261 7.71448 19.0261" stroke-width="0.5"/>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7704 19.025C12.3219 19.025 11.9579 18.661 11.9579 18.2125V7.22421C11.9579 6.77571 12.3219 6.41171 12.7704 6.41171C13.2189 6.41171 13.5829 6.77571 13.5829 7.22421V18.2125C13.5829 18.661 13.2189 19.025 12.7704 19.025Z"/>
@@ -102,7 +132,7 @@
                 </span>
               </a>
               <a href="" class="hidden group-[.collapse-sidebar]:flex mx-auto items-center justify-center w-[60px] h-[50px] 2xl:w-[76px] 2xl:h-[62px] [&.active]:bg-primary [&.active]:text-white hover:bg-primary hover:text-white duration-300 text-primary">
-                <svg class="size-[18px] 2xl:size-[26px]" fill="currentColor" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+                <svg class="icon-size" fill="currentColor" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M7.71448 19.0261C7.26598 19.0261 6.90198 18.6621 6.90198 18.2136V10.7819C6.90198 10.3334 7.26598 9.96939 7.71448 9.96939C8.16298 9.96939 8.52698 10.3334 8.52698 10.7819V18.2136C8.52698 18.6621 8.16298 19.0261 7.71448 19.0261Z"/>
                   <path d="M7.71448 19.0261C7.26598 19.0261 6.90198 18.6621 6.90198 18.2136V10.7819C6.90198 10.3334 7.26598 9.96939 7.71448 9.96939C8.16298 9.96939 8.52698 10.3334 8.52698 10.7819V18.2136C8.52698 18.6621 8.16298 19.0261 7.71448 19.0261" stroke-width="0.5"/>
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7704 19.025C12.3219 19.025 11.9579 18.661 11.9579 18.2125V7.22421C11.9579 6.77571 12.3219 6.41171 12.7704 6.41171C13.2189 6.41171 13.5829 6.77571 13.5829 7.22421V18.2125C13.5829 18.661 13.2189 19.025 12.7704 19.025Z"/>
@@ -119,7 +149,7 @@
             <li title="Accounting" class="relative">
               <a href="Accounting" class="group-[.collapse-sidebar]:hidden flex items-center justify-between header [&.active]:bg-primary [&.active]:text-white hover:bg-primary hover:text-white duration-300 text-primary 2xl:p-[18px] px-3 py-2 whitespace-nowrap">
                 <span class="flex items-center space-x-3.5 2xl:space-x-5">
-                    <svg class="size-[18px] 2xl:size-[26px]" stroke="currentColor" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="icon-size" stroke="currentColor" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M1 17.5V6.49997" stroke="currentColor" stroke-width="2"/>
                       <path d="M1 6.50005C1 5.99997 1.58559 3.95729 3.5 2.99997C4.5 2.49991 8 0.999969 12.5 1C16 0.999969 18 1.24999 21.5 2.99999C22.5 3.49999 24 4.99999 24 5.50007C24 6.00014 24 17.5001 24 17.5001C24 17.5001 24 19.0001 21.5 20.5001C19 22.0001 12.5 22.0001 12.5 22.0001C12.5 22.0001 6 22.0001 3.5 20.5001C1 19.0001 1 17.5001 1 17.5001" stroke="currentColor" stroke-width="2"/>
                       <path d="M1.5 5.99997C5 8.49997 15.1 12 23.5 5.99997" stroke="currentColor" stroke-width="2"/>
@@ -128,7 +158,7 @@
                     <span class="font-22 capitalize max-w-[150px] 2xl:max-w-[175px] overflow-hidden text-ellipsis">Accounting</span>
                 </span>
                 <a href="" class="hidden group-[.collapse-sidebar]:flex mx-auto items-center justify-center w-[60px] h-[50px] 2xl:w-[76px] 2xl:h-[62px] [&.active]:bg-primary [&.active]:text-white hover:bg-primary hover:text-white duration-300 text-primary">
-                  <svg class="size-[18px] 2xl:size-[26px]" stroke="currentColor" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg class="icon-size" stroke="currentColor" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 17.5V6.49997" stroke="currentColor" stroke-width="2"/>
                     <path d="M1 6.50005C1 5.99997 1.58559 3.95729 3.5 2.99997C4.5 2.49991 8 0.999969 12.5 1C16 0.999969 18 1.24999 21.5 2.99999C22.5 3.49999 24 4.99999 24 5.50007C24 6.00014 24 17.5001 24 17.5001C24 17.5001 24 19.0001 21.5 20.5001C19 22.0001 12.5 22.0001 12.5 22.0001C12.5 22.0001 6 22.0001 3.5 20.5001C1 19.0001 1 17.5001 1 17.5001" stroke="currentColor" stroke-width="2"/>
                     <path d="M1.5 5.99997C5 8.49997 15.1 12 23.5 5.99997" stroke="currentColor" stroke-width="2"/>
@@ -140,7 +170,7 @@
             <li title="dashbord" class="relative">
               <a href="Invoices" class="group-[.collapse-sidebar]:hidden flex items-center justify-between header [&.active]:bg-primary [&.active]:text-white hover:bg-primary hover:text-white duration-300 text-primary 2xl:p-[18px] px-3 py-2 whitespace-nowrap">
                 <span class="flex items-center space-x-3.5 2xl:space-x-5">
-                  <svg class="size-[18px] 2xl:size-[26px]" fill="none" stoke="currentColor" viewBox="0 0 25 28" xmlns="http://www.w3.org/2000/svg">
+                  <svg class="icon-size" fill="none" stoke="currentColor" viewBox="0 0 25 28" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10.5 25H3C1.89543 25 1 24.1046 1 23V3C1 1.89543 1.89543 1 3 1H18C19.1046 1 20 1.89543 20 3V13" stroke="currentColor" stroke-width="2"/>
                     <path d="M10.576 18.104C11.1093 18.104 11.568 17.944 11.952 17.624C12.336 17.2933 12.528 16.8507 12.528 16.296C12.528 15.9227 12.4213 15.608 12.208 15.352C12.0053 15.0853 11.7493 14.8667 11.44 14.696C11.1413 14.5147 10.7253 14.3067 10.192 14.072C9.52 13.7733 8.976 13.496 8.56 13.24C8.144 12.984 7.78667 12.6373 7.488 12.2C7.2 11.752 7.056 11.1973 7.056 10.536C7.056 10.056 7.16267 9.59733 7.376 9.16C7.6 8.712 7.936 8.33867 8.384 8.04C8.84267 7.74133 9.39733 7.57067 10.048 7.528V5.432C10.1547 5.304 10.2987 5.208 10.48 5.144C10.672 5.08 10.864 5.048 11.056 5.048V7.56C11.8027 7.64533 12.4213 7.87467 12.912 8.248C13.4027 8.62133 13.648 9.10667 13.648 9.704C13.648 10.1947 13.4827 10.6 13.152 10.92C12.8213 11.24 12.416 11.4 11.936 11.4C11.808 11.4 11.7173 11.3893 11.664 11.368C11.6213 11.3467 11.6 11.2933 11.6 11.208C11.6 11.176 11.6427 11.0907 11.728 10.952C11.824 10.8133 11.904 10.6533 11.968 10.472C12.0427 10.2907 12.08 10.0773 12.08 9.832C12.08 9.384 11.9147 9.03733 11.584 8.792C11.2533 8.536 10.8693 8.408 10.432 8.408C9.83467 8.408 9.376 8.57867 9.056 8.92C8.736 9.26133 8.576 9.66133 8.576 10.12C8.576 10.6107 8.69333 11.0213 8.928 11.352C9.16267 11.672 9.456 11.9333 9.808 12.136C10.16 12.3387 10.6293 12.568 11.216 12.824C11.8667 13.1013 12.384 13.3573 12.768 13.592C13.152 13.816 13.4773 14.1307 13.744 14.536C14.0107 14.9307 14.144 15.4267 14.144 16.024C14.144 16.824 13.8613 17.496 13.296 18.04C12.7307 18.584 11.984 18.8987 11.056 18.984V21.064C10.96 21.192 10.816 21.288 10.624 21.352C10.4427 21.416 10.2507 21.448 10.048 21.448V18.984C9.14133 18.9093 8.384 18.648 7.776 18.2C7.168 17.752 6.864 17.1547 6.864 16.408C6.864 15.9067 7.024 15.5013 7.344 15.192C7.67467 14.872 8.08533 14.712 8.576 14.712C8.71467 14.712 8.80533 14.7227 8.848 14.744C8.89067 14.7653 8.912 14.8187 8.912 14.904C8.912 14.936 8.864 15.0213 8.768 15.16C8.68267 15.2987 8.60267 15.4587 8.528 15.64C8.464 15.8213 8.432 16.0347 8.432 16.28C8.432 16.8453 8.64 17.2933 9.056 17.624C9.48267 17.944 9.98933 18.104 10.576 18.104Z" fill="currentColor"/>
                     <circle cx="21" cy="18" r="3" stroke="currentColor" stroke-width="2"/>
@@ -150,7 +180,7 @@
                 </span>
               </a>
               <a href="" class="hidden group-[.collapse-sidebar]:flex mx-auto items-center justify-center w-[60px] h-[50px] 2xl:w-[76px] 2xl:h-[62px] [&.active]:bg-primary [&.active]:text-white hover:bg-primary hover:text-white duration-300 text-primary">
-                <svg class="size-[18px] 2xl:size-[26px]" fill="none" stoke="currentColor" viewBox="0 0 25 28" xmlns="http://www.w3.org/2000/svg">
+                <svg class="icon-size" fill="none" stoke="currentColor" viewBox="0 0 25 28" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10.5 25H3C1.89543 25 1 24.1046 1 23V3C1 1.89543 1.89543 1 3 1H18C19.1046 1 20 1.89543 20 3V13" stroke="currentColor" stroke-width="2"/>
                   <path d="M10.576 18.104C11.1093 18.104 11.568 17.944 11.952 17.624C12.336 17.2933 12.528 16.8507 12.528 16.296C12.528 15.9227 12.4213 15.608 12.208 15.352C12.0053 15.0853 11.7493 14.8667 11.44 14.696C11.1413 14.5147 10.7253 14.3067 10.192 14.072C9.52 13.7733 8.976 13.496 8.56 13.24C8.144 12.984 7.78667 12.6373 7.488 12.2C7.2 11.752 7.056 11.1973 7.056 10.536C7.056 10.056 7.16267 9.59733 7.376 9.16C7.6 8.712 7.936 8.33867 8.384 8.04C8.84267 7.74133 9.39733 7.57067 10.048 7.528V5.432C10.1547 5.304 10.2987 5.208 10.48 5.144C10.672 5.08 10.864 5.048 11.056 5.048V7.56C11.8027 7.64533 12.4213 7.87467 12.912 8.248C13.4027 8.62133 13.648 9.10667 13.648 9.704C13.648 10.1947 13.4827 10.6 13.152 10.92C12.8213 11.24 12.416 11.4 11.936 11.4C11.808 11.4 11.7173 11.3893 11.664 11.368C11.6213 11.3467 11.6 11.2933 11.6 11.208C11.6 11.176 11.6427 11.0907 11.728 10.952C11.824 10.8133 11.904 10.6533 11.968 10.472C12.0427 10.2907 12.08 10.0773 12.08 9.832C12.08 9.384 11.9147 9.03733 11.584 8.792C11.2533 8.536 10.8693 8.408 10.432 8.408C9.83467 8.408 9.376 8.57867 9.056 8.92C8.736 9.26133 8.576 9.66133 8.576 10.12C8.576 10.6107 8.69333 11.0213 8.928 11.352C9.16267 11.672 9.456 11.9333 9.808 12.136C10.16 12.3387 10.6293 12.568 11.216 12.824C11.8667 13.1013 12.384 13.3573 12.768 13.592C13.152 13.816 13.4773 14.1307 13.744 14.536C14.0107 14.9307 14.144 15.4267 14.144 16.024C14.144 16.824 13.8613 17.496 13.296 18.04C12.7307 18.584 11.984 18.8987 11.056 18.984V21.064C10.96 21.192 10.816 21.288 10.624 21.352C10.4427 21.416 10.2507 21.448 10.048 21.448V18.984C9.14133 18.9093 8.384 18.648 7.776 18.2C7.168 17.752 6.864 17.1547 6.864 16.408C6.864 15.9067 7.024 15.5013 7.344 15.192C7.67467 14.872 8.08533 14.712 8.576 14.712C8.71467 14.712 8.80533 14.7227 8.848 14.744C8.89067 14.7653 8.912 14.8187 8.912 14.904C8.912 14.936 8.864 15.0213 8.768 15.16C8.68267 15.2987 8.60267 15.4587 8.528 15.64C8.464 15.8213 8.432 16.0347 8.432 16.28C8.432 16.8453 8.64 17.2933 9.056 17.624C9.48267 17.944 9.98933 18.104 10.576 18.104Z" fill="currentColor"/>
                   <circle cx="21" cy="18" r="3" stroke="currentColor" stroke-width="2"/>
@@ -161,7 +191,7 @@
             <li title="dashbord" class="relative">
               <a href="Bills" class="group-[.collapse-sidebar]:hidden flex items-center justify-between header [&.active]:bg-primary [&.active]:text-white hover:bg-primary hover:text-white duration-300 text-primary 2xl:p-[18px] px-3 py-2 whitespace-nowrap">
                 <span class="flex items-center space-x-3.5 2xl:space-x-5">
-                  <svg class="size-[18px] 2xl:size-[26px]" fill="currentColor" viewBox="0 0 23 27" xmlns="http://www.w3.org/2000/svg">
+                  <svg class="icon-size" fill="currentColor" viewBox="0 0 23 27" xmlns="http://www.w3.org/2000/svg">
                     <mask id="mask0_134_2516" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="23" height="27">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M1 1.0835H22.3409V25.9295H1V1.0835Z" fill="white" stroke="white" stroke-width="0.5"/>
                     </mask>
@@ -177,7 +207,7 @@
                 </span>
               </a>
               <a href="" class="hidden group-[.collapse-sidebar]:flex mx-auto items-center justify-center w-[60px] h-[50px] 2xl:w-[76px] 2xl:h-[62px] [&.active]:bg-primary [&.active]:text-white hover:bg-primary hover:text-white duration-300 text-primary">
-                <svg class="size-[18px] 2xl:size-[26px]" fill="currentColor" viewBox="0 0 23 27" xmlns="http://www.w3.org/2000/svg">
+                <svg class="icon-size" fill="currentColor" viewBox="0 0 23 27" xmlns="http://www.w3.org/2000/svg">
                   <mask id="mask0_134_2516" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="23" height="27">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M1 1.0835H22.3409V25.9295H1V1.0835Z" fill="white" stroke="white" stroke-width="0.5"/>
                   </mask>
@@ -194,7 +224,7 @@
             <li title="Contacts" class="relative">
               <a href="" class="group-[.collapse-sidebar]:hidden active flex items-center justify-between header [&.active]:bg-primary [&.active]:text-white hover:bg-primary hover:text-white duration-300 text-primary 2xl:p-[18px] px-3 py-2 whitespace-nowrap">
                 <span class="flex items-center space-x-3.5 2xl:space-x-5">
-                  <svg class="size-[18px] 2xl:size-[26px]" fill="none" viewBox="0 0 28 34" xmlns="http://www.w3.org/2000/svg">
+                  <svg class="icon-size" fill="none" viewBox="0 0 28 34" xmlns="http://www.w3.org/2000/svg">
                     <path fill="currentColor" d="M14.4376 18.2064L14.4376 18.2064C13.8582 17.3697 13.5887 16.6729 13.5505 16.0476C13.5116 15.4091 13.72 14.9292 13.9175 14.5608C13.9604 14.4807 14.0047 14.4027 14.0444 14.3327C14.0489 14.3246 14.0535 14.3166 14.0579 14.3088C14.1025 14.2301 14.1411 14.1613 14.1757 14.0946C14.245 13.9609 14.2849 13.8599 14.3038 13.7692C14.3323 13.6321 14.3367 13.4196 14.0607 13.021L14.0606 13.0209C13.8901 12.7747 13.7389 12.5437 13.6035 12.337L13.6004 12.3323C13.4623 12.1214 13.3438 11.9407 13.2315 11.7822C12.9978 11.4526 12.8438 11.2998 12.7175 11.2306C12.6322 11.1839 12.5142 11.1487 12.2545 11.227C11.97 11.3128 11.5688 11.5212 10.9798 11.9276C10.9432 11.956 10.9064 11.9807 10.8878 11.9932C10.8856 11.9947 10.8836 11.996 10.8819 11.9972L10.8797 11.9987C10.8461 12.0213 10.8149 12.0424 10.7802 12.0678C10.7111 12.1183 10.6332 12.1824 10.5563 12.2679C10.4089 12.4316 10.2397 12.7013 10.1849 13.16C10.071 14.1134 10.445 15.9632 12.7887 19.3481C15.1323 22.7323 16.7317 23.7326 17.6638 23.961C18.1122 24.071 18.424 24.0073 18.629 23.9269C18.736 23.885 18.8235 23.8346 18.8951 23.7876C18.9309 23.7641 18.9616 23.7423 18.9945 23.7189L18.997 23.7172C18.9986 23.716 19.0006 23.7146 19.0028 23.7131C19.021 23.7 19.0572 23.6742 19.0968 23.6499C19.6831 23.2429 20.0186 22.9413 20.1989 22.7055C20.3634 22.4902 20.3724 22.3669 20.3588 22.2698C20.3387 22.1268 20.25 21.9285 20.0244 21.5936C19.916 21.4327 19.7887 21.258 19.6403 21.0545L19.6321 21.0433C19.4878 20.8456 19.3268 20.625 19.1583 20.3817L14.4376 18.2064ZM14.4376 18.2064C15.0169 19.0431 15.5743 19.5406 16.1462 19.7962M14.4376 18.2064L16.1462 19.7962M16.1462 19.7962C16.7303 20.0572 17.2527 20.0307 17.667 19.9752M16.1462 19.7962L17.667 19.9752M17.667 19.9752C17.7572 19.9631 17.8458 19.9491 17.9254 19.9365M17.667 19.9752L17.9254 19.9365M17.9254 19.9365C17.9345 19.935 17.9435 19.9336 17.9523 19.9322M17.9254 19.9365L17.9523 19.9322M17.9523 19.9322C18.0417 19.9181 18.1196 19.9061 18.1942 19.8972M17.9523 19.9322L18.1942 19.8972M18.1942 19.8972C18.3437 19.8792 18.4523 19.8773 18.5437 19.8915M18.1942 19.8972L18.5437 19.8915M18.5437 19.8915C18.682 19.9129 18.8823 19.9834 19.1582 20.3815L18.5437 19.8915Z" stroke="currentColor" stroke-width="1.2"/>
                     <rect x="2.88214" y="1" width="23.1964" height="32" rx="6" stroke="currentColor" stroke-width="2"/>
                     <line x1="1" y1="8.41072" x2="4.95" y2="8.41072" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -205,7 +235,7 @@
                 </span>
               </a>
               <a href="" class="hidden group-[.collapse-sidebar]:flex mx-auto items-center justify-center w-[60px] h-[50px] 2xl:w-[76px] 2xl:h-[62px] [&.active]:bg-primary [&.active]:text-white hover:bg-primary hover:text-white duration-300 text-primary">
-                <svg class="size-[18px] 2xl:size-[26px]" fill="currentColor"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5">
+                <svg class="icon-size" fill="currentColor"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                 </svg>      
               </a>
@@ -213,7 +243,7 @@
             <li title="Vendor KYC" class="relative">
               <a href="" class="group-[.collapse-sidebar]:hidden flex items-center justify-between header [&.active]:bg-primary [&.active]:text-white hover:bg-primary hover:text-white duration-300 text-primary 2xl:p-[18px] px-3 py-2 whitespace-nowrap">
                 <span class="flex items-center space-x-3.5 2xl:space-x-5">
-                    <svg class="size-[18px] 2xl:size-[26px]" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="icon-size" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <mask id="mask0_607_425" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="26" height="24">
                       <rect width="26" height="24" fill="#D9D9D9"/>
                       </mask>
@@ -230,7 +260,7 @@
                 </span>
               </a>
               <a href="" class="hidden group-[.collapse-sidebar]:flex mx-auto items-center justify-center w-[60px] h-[50px] 2xl:w-[76px] 2xl:h-[62px] [&.active]:bg-primary [&.active]:text-white hover:bg-primary hover:text-white duration-300 text-primary">
-                <svg class="size-[18px] 2xl:size-[26px]" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="icon-size" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <mask id="mask0_607_425" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="26" height="24">
                   <rect width="26" height="24" fill="#D9D9D9"/>
                   </mask>
@@ -249,7 +279,7 @@
               <a href="" class="group-[.collapse-sidebar]:hidden flex items-center justify-between header [&.active]:bg-primary [&.active]:text-white hover:bg-primary hover:text-white duration-300 text-primary 2xl:p-[18px] px-3 py-2 whitespace-nowrap">
                 <span class="flex items-center space-x-3.5 2xl:space-x-5">
                     
-                    <svg class="size-[18px] 2xl:size-[26px]" viewBox="0 0 25 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="icon-size" viewBox="0 0 25 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M23.7651 18.7244L23.7627 18.7283L22.8206 20.2883L22.8206 20.2882L22.8156 20.2966C22.6992 20.4937 22.5438 20.6668 22.3579 20.8054C22.172 20.944 21.9595 21.0452 21.7324 21.1026C21.5053 21.16 21.2688 21.1723 21.0367 21.1387C20.8046 21.1051 20.5821 21.0264 20.3821 20.9075L20.3801 20.9063C19.8621 20.6001 19.2668 20.4485 18.6655 20.4684C17.7765 20.4794 16.9226 20.8244 16.2783 21.437C15.6302 22.0533 15.2434 22.894 15.2013 23.787L15.2004 23.8064L15.2002 23.8258C15.1983 24.0478 15.1518 24.2676 15.0631 24.4724C14.9743 24.6772 14.8448 24.8634 14.6815 25.0197C14.5183 25.176 14.3245 25.2994 14.1112 25.3819C13.8978 25.4645 13.6696 25.5045 13.4399 25.4993L13.4286 25.499H13.4172H11.5882H11.5749L11.5616 25.4994C11.331 25.5055 11.1018 25.4662 10.8873 25.384C10.6729 25.3018 10.478 25.1786 10.3137 25.022C10.1494 24.8655 10.019 24.6789 9.92943 24.4734C9.83991 24.268 9.79288 24.0474 9.79076 23.8246L9.79062 23.8102L9.79007 23.7959C9.75587 22.9013 9.37333 22.0567 8.72606 21.4377C8.08402 20.8236 7.23075 20.4781 6.34247 20.4684C5.74004 20.4446 5.14297 20.5964 4.62553 20.9062C4.34765 21.067 4.03113 21.1539 3.70743 21.1572C3.39645 21.1542 3.09201 21.0726 2.8233 20.9208C2.55378 20.7686 2.32986 20.5513 2.17193 20.2909C2.17139 20.29 2.17084 20.2891 2.1703 20.2882L1.2462 18.7342L1.24138 18.7261L1.2364 18.718C1.08421 18.4728 1.0029 18.1923 1.00008 17.9066C0.997254 17.6208 1.07301 17.3389 1.22026 17.0909L1.22032 17.0908C1.38352 16.8158 1.6207 16.5886 1.90749 16.435L1.90749 16.435L1.91153 16.4328C2.43009 16.152 2.85989 15.7318 3.15038 15.2188C3.59993 14.4442 3.72266 13.5239 3.4901 12.6589C3.25696 11.7917 2.68696 11.0545 1.90896 10.6055L1.90122 10.601L1.8934 10.5967C1.69603 10.4874 1.52366 10.3407 1.386 10.1657C1.24835 9.99076 1.1481 9.79102 1.09055 9.57846C1.033 9.36592 1.01917 9.14436 1.04977 8.92668C1.08036 8.70899 1.15485 8.499 1.26935 8.30914L1.2694 8.30917L1.27519 8.29933L2.17381 6.77001C2.41247 6.37486 2.8006 6.08445 3.25777 5.96535C3.7166 5.84581 4.20425 5.90958 4.61455 6.14143L4.63153 6.15103L4.64887 6.15995C5.44367 6.56905 6.3637 6.66803 7.22778 6.43839C8.09206 6.2087 8.84073 5.66595 9.32326 4.91385L9.32502 4.91108C9.65188 4.39792 9.81447 3.79771 9.78999 3.18967L9.79003 3.18967L9.7896 3.18095C9.77614 2.90633 9.85026 2.63349 10.003 2.40081L10.009 2.39178L10.0147 2.38262C10.1783 2.12129 10.406 1.90297 10.6782 1.74836C10.9471 1.59563 11.2506 1.51012 11.562 1.5H13.4375C13.7502 1.5042 14.056 1.58687 14.3262 1.73948C14.5977 1.89283 14.8236 2.11137 14.9836 2.37325L14.9902 2.3841L14.9972 2.39478C15.147 2.62668 15.2182 2.89805 15.2019 3.17037L15.2013 3.1816L15.2008 3.19284C15.1784 3.7986 15.3403 4.39621 15.6642 4.90842L15.6642 4.90844L15.669 4.91584C16.1543 5.66838 16.9054 6.21094 17.7718 6.4402C18.6379 6.66941 19.5598 6.56984 20.3564 6.16006L20.3745 6.15072L20.3922 6.14066C20.7996 5.90962 21.2844 5.84607 21.7403 5.9653C22.195 6.08423 22.5805 6.37427 22.8162 6.76839C22.8167 6.76916 22.8171 6.76993 22.8176 6.7707L23.7158 8.29933L23.721 8.30824L23.7264 8.31704C23.8424 8.50536 23.9182 8.7143 23.9497 8.93122C23.9813 9.14813 23.968 9.36913 23.9107 9.58108C23.8534 9.79305 23.753 9.99209 23.615 10.166C23.477 10.34 23.3041 10.4853 23.1063 10.5926L23.0957 10.5984L23.0852 10.6044C22.6984 10.8265 22.359 11.1225 22.0871 11.4758C21.8152 11.8292 21.6161 12.2328 21.502 12.6637C21.3879 13.0946 21.3611 13.5438 21.4234 13.9852C21.4844 14.4186 21.6301 14.8356 21.8516 15.2131C22.1322 15.7301 22.5586 16.1531 23.0769 16.4315C23.3678 16.5935 23.6123 16.8232 23.7898 17.0991C23.9305 17.3461 24.0027 17.6245 23.9999 17.9065C23.9971 18.1941 23.9163 18.4765 23.7651 18.7244ZM8.07973 11.6914C7.83327 12.2626 7.70326 12.8768 7.69746 13.4984C7.67965 14.442 7.94581 15.3688 8.46092 16.1611C8.97705 16.9549 9.71927 17.5772 10.5917 17.9508C11.464 18.3242 12.4284 18.4327 13.3625 18.2629C14.2966 18.0931 15.1602 17.6524 15.8427 16.9948C16.5252 16.3372 16.9958 15.4923 17.1926 14.567C17.3894 13.6416 17.303 12.6794 16.9448 11.8033C16.5868 10.9273 15.9738 10.1783 15.1859 9.65028C14.3998 9.1234 13.4744 8.83971 12.5269 8.8337C11.9027 8.82386 11.2823 8.9359 10.7014 9.16368C10.1186 9.39219 9.58665 9.73282 9.13652 10.1665C8.68637 10.6002 8.32698 11.1184 8.07973 11.6914Z" fill="none" stroke="currentColor" stroke-width="2"/>
                       </svg>
                     <span class="font-22 capitalize max-w-[150px] 2xl:max-w-[175px] overflow-hidden text-ellipsis">Settings</span>
@@ -259,7 +289,7 @@
                 </svg>   
               </a>
               <a href="" class="hidden group-[.collapse-sidebar]:flex mx-auto items-center justify-center w-[60px] h-[50px] 2xl:w-[76px] 2xl:h-[62px] [&.active]:bg-primary [&.active]:text-white hover:bg-primary hover:text-white duration-300 text-primary">
-                <svg class="size-[18px] 2xl:size-[26px]" viewBox="0 0 25 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="icon-size" viewBox="0 0 25 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M23.7651 18.7244L23.7627 18.7283L22.8206 20.2883L22.8206 20.2882L22.8156 20.2966C22.6992 20.4937 22.5438 20.6668 22.3579 20.8054C22.172 20.944 21.9595 21.0452 21.7324 21.1026C21.5053 21.16 21.2688 21.1723 21.0367 21.1387C20.8046 21.1051 20.5821 21.0264 20.3821 20.9075L20.3801 20.9063C19.8621 20.6001 19.2668 20.4485 18.6655 20.4684C17.7765 20.4794 16.9226 20.8244 16.2783 21.437C15.6302 22.0533 15.2434 22.894 15.2013 23.787L15.2004 23.8064L15.2002 23.8258C15.1983 24.0478 15.1518 24.2676 15.0631 24.4724C14.9743 24.6772 14.8448 24.8634 14.6815 25.0197C14.5183 25.176 14.3245 25.2994 14.1112 25.3819C13.8978 25.4645 13.6696 25.5045 13.4399 25.4993L13.4286 25.499H13.4172H11.5882H11.5749L11.5616 25.4994C11.331 25.5055 11.1018 25.4662 10.8873 25.384C10.6729 25.3018 10.478 25.1786 10.3137 25.022C10.1494 24.8655 10.019 24.6789 9.92943 24.4734C9.83991 24.268 9.79288 24.0474 9.79076 23.8246L9.79062 23.8102L9.79007 23.7959C9.75587 22.9013 9.37333 22.0567 8.72606 21.4377C8.08402 20.8236 7.23075 20.4781 6.34247 20.4684C5.74004 20.4446 5.14297 20.5964 4.62553 20.9062C4.34765 21.067 4.03113 21.1539 3.70743 21.1572C3.39645 21.1542 3.09201 21.0726 2.8233 20.9208C2.55378 20.7686 2.32986 20.5513 2.17193 20.2909C2.17139 20.29 2.17084 20.2891 2.1703 20.2882L1.2462 18.7342L1.24138 18.7261L1.2364 18.718C1.08421 18.4728 1.0029 18.1923 1.00008 17.9066C0.997254 17.6208 1.07301 17.3389 1.22026 17.0909L1.22032 17.0908C1.38352 16.8158 1.6207 16.5886 1.90749 16.435L1.90749 16.435L1.91153 16.4328C2.43009 16.152 2.85989 15.7318 3.15038 15.2188C3.59993 14.4442 3.72266 13.5239 3.4901 12.6589C3.25696 11.7917 2.68696 11.0545 1.90896 10.6055L1.90122 10.601L1.8934 10.5967C1.69603 10.4874 1.52366 10.3407 1.386 10.1657C1.24835 9.99076 1.1481 9.79102 1.09055 9.57846C1.033 9.36592 1.01917 9.14436 1.04977 8.92668C1.08036 8.70899 1.15485 8.499 1.26935 8.30914L1.2694 8.30917L1.27519 8.29933L2.17381 6.77001C2.41247 6.37486 2.8006 6.08445 3.25777 5.96535C3.7166 5.84581 4.20425 5.90958 4.61455 6.14143L4.63153 6.15103L4.64887 6.15995C5.44367 6.56905 6.3637 6.66803 7.22778 6.43839C8.09206 6.2087 8.84073 5.66595 9.32326 4.91385L9.32502 4.91108C9.65188 4.39792 9.81447 3.79771 9.78999 3.18967L9.79003 3.18967L9.7896 3.18095C9.77614 2.90633 9.85026 2.63349 10.003 2.40081L10.009 2.39178L10.0147 2.38262C10.1783 2.12129 10.406 1.90297 10.6782 1.74836C10.9471 1.59563 11.2506 1.51012 11.562 1.5H13.4375C13.7502 1.5042 14.056 1.58687 14.3262 1.73948C14.5977 1.89283 14.8236 2.11137 14.9836 2.37325L14.9902 2.3841L14.9972 2.39478C15.147 2.62668 15.2182 2.89805 15.2019 3.17037L15.2013 3.1816L15.2008 3.19284C15.1784 3.7986 15.3403 4.39621 15.6642 4.90842L15.6642 4.90844L15.669 4.91584C16.1543 5.66838 16.9054 6.21094 17.7718 6.4402C18.6379 6.66941 19.5598 6.56984 20.3564 6.16006L20.3745 6.15072L20.3922 6.14066C20.7996 5.90962 21.2844 5.84607 21.7403 5.9653C22.195 6.08423 22.5805 6.37427 22.8162 6.76839C22.8167 6.76916 22.8171 6.76993 22.8176 6.7707L23.7158 8.29933L23.721 8.30824L23.7264 8.31704C23.8424 8.50536 23.9182 8.7143 23.9497 8.93122C23.9813 9.14813 23.968 9.36913 23.9107 9.58108C23.8534 9.79305 23.753 9.99209 23.615 10.166C23.477 10.34 23.3041 10.4853 23.1063 10.5926L23.0957 10.5984L23.0852 10.6044C22.6984 10.8265 22.359 11.1225 22.0871 11.4758C21.8152 11.8292 21.6161 12.2328 21.502 12.6637C21.3879 13.0946 21.3611 13.5438 21.4234 13.9852C21.4844 14.4186 21.6301 14.8356 21.8516 15.2131C22.1322 15.7301 22.5586 16.1531 23.0769 16.4315C23.3678 16.5935 23.6123 16.8232 23.7898 17.0991C23.9305 17.3461 24.0027 17.6245 23.9999 17.9065C23.9971 18.1941 23.9163 18.4765 23.7651 18.7244ZM8.07973 11.6914C7.83327 12.2626 7.70326 12.8768 7.69746 13.4984C7.67965 14.442 7.94581 15.3688 8.46092 16.1611C8.97705 16.9549 9.71927 17.5772 10.5917 17.9508C11.464 18.3242 12.4284 18.4327 13.3625 18.2629C14.2966 18.0931 15.1602 17.6524 15.8427 16.9948C16.5252 16.3372 16.9958 15.4923 17.1926 14.567C17.3894 13.6416 17.303 12.6794 16.9448 11.8033C16.5868 10.9273 15.9738 10.1783 15.1859 9.65028C14.3998 9.1234 13.4744 8.83971 12.5269 8.8337C11.9027 8.82386 11.2823 8.9359 10.7014 9.16368C10.1186 9.39219 9.58665 9.73282 9.13652 10.1665C8.68637 10.6002 8.32698 11.1184 8.07973 11.6914Z" fill="none" stroke="currentColor" stroke-width="2"/>
                   </svg>         
               </a>
@@ -284,10 +314,12 @@
           </ul>
         </aside>
       </div>
+
+      
       <main id="main-section" class="min-h-screen h-screen w-full pt-[100px] 2xl:pt-[140px] overflow-y-auto">
         <div class="p-5 2xl:p-7 w-full">
           <div class="flex items-center justify-between flex-wrap">
-            <h3 class="text-gray-dark font-28 font-semibold capitalize 2xl:py-2">Add new contact</h3>
+            <h3 class="text-gray-dark font-28 font-semibold capitalize 2xl:py-4">Add new contact</h3>
           </div>
           
           <form action="">   
@@ -306,15 +338,15 @@
                   </div>
                   <div class="flex flex-wrap items-center gap-x-9 mt-5 2xl:mt-8">
                     <label class="flex group/check space-x-3.5 cursor-pointer">
-                      <span class="all-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center size-[20px] 2xl:size-[30px] border border-gray-light rounded-md">
-                        <svg class="size-3 2xl:size-5 text-white group-has-[input:checked]/check:block hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>
+                      <span class="all-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center checkbox-size border border-gray-light rounded-[5px]">
+                        <svg class="check-icon-size text-white group-has-[input:checked]/check:block hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>
                         <input class="border-[1.5px] border-gray-dark hidden" id="" name="" type="checkbox">
                       </span>
                       <span class="default-label mb-0">customer</span>
                     </label>
                     <label class="flex group/check space-x-3.5 cursor-pointer">
-                      <span class="all-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center size-[20px] 2xl:size-[30px] border border-gray-light rounded-md">
-                        <svg class="size-3 2xl:size-5 text-white group-has-[input:checked]/check:block hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>
+                      <span class="all-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center checkbox-size border border-gray-light rounded-[5px]">
+                        <svg class="check-icon-size text-white group-has-[input:checked]/check:block hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>
                         <input class="border-[1.5px] border-gray-dark hidden" id="" name="" type="checkbox">
                       </span>
                       <span class="default-label mb-0">vendor</span>
@@ -430,8 +462,8 @@
             </div>
             <div class="mt-5 2xl:mt-6">
               <div class="flex justify-end gap-5">
-                <button type="button" class="min-w-[140px] 2xl:min-w-[200px] btn-white">Cancel</button>
-                <button type="button" class="min-w-[140px] 2xl:min-w-[200px] btn-primary">Save & close</button>
+                <button type="button" class="flex-1 sm:flex-none min-w-[140px] 2xl:min-w-[200px] btn-white">Cancel</button>
+                <button type="button" class="flex-1 sm:flex-none min-w-[140px] 2xl:min-w-[200px] btn-primary">Save & close</button>
               </div>
             </div>
           </form>
@@ -473,8 +505,8 @@
 
                   <div class="flex flex-wrap items-center gap-x-9 mt-8 2xl:mt-10">
                     <label class="flex group/check space-x-3.5 cursor-pointer">
-                      <span class="all-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center size-[20px] 2xl:size-[30px] border border-gray-light rounded-md">
-                        <svg class="size-3 2xl:size-5 text-white group-has-[input:checked]/check:block hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>
+                      <span class="all-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center checkbox-size border border-gray-light rounded-[5px]">
+                        <svg class="check-icon-size text-white group-has-[input:checked]/check:block hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>
                         <input class="border-[1.5px] border-gray-dark hidden" id="" name="" type="checkbox">
                       </span>
                       <span class="default-label mb-0">Use as delivery address</span>
@@ -486,8 +518,8 @@
                   <!-- Modal footer -->
                   <div class="p-5 2xl:p-6 pt-0">
                     <div class="flex justify-end gap-5">
-                      <button data-modal-hide="default-modal" type="button" class="min-w-[140px] 2xl:min-w-[200px] btn-white">Cancel</button>
-                      <button data-modal-hide="default-modal" class="min-w-[140px] 2xl:min-w-[200px] btn-primary">Save & close</button>
+                      <button data-modal-hide="default-modal" type="button" class="flex-1 sm:flex-none min-w-[140px] 2xl:min-w-[200px] btn-white">Cancel</button>
+                      <button data-modal-hide="default-modal" class="flex-1 sm:flex-none min-w-[140px] 2xl:min-w-[200px] btn-primary">Save & close</button>
                     </div>
                   </div>
               </div>
@@ -531,8 +563,8 @@
 
                   <div class="flex flex-wrap items-center gap-x-9 mt-8 2xl:mt-10">
                     <label class="flex group/check space-x-3.5 cursor-pointer">
-                      <span class="all-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center size-[20px] 2xl:size-[30px] border border-gray-light rounded-md">
-                        <svg class="size-3 2xl:size-5 text-white group-has-[input:checked]/check:block hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>
+                      <span class="all-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center checkbox-size border border-gray-light rounded-[5px]">
+                        <svg class="check-icon-size text-white group-has-[input:checked]/check:block hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>
                         <input class="border-[1.5px] border-gray-dark hidden" id="" name="" type="checkbox">
                       </span>
                       <span class="default-label mb-0">Use as delivery address</span>
@@ -544,8 +576,8 @@
                   <!-- Modal footer -->
                   <div class="p-5 2xl:p-6 pt-0">
                     <div class="flex justify-end gap-5">
-                      <button data-modal-hide="default-modal2" type="button" class="min-w-[140px] 2xl:min-w-[200px] btn-white">Cancel</button>
-                      <button data-modal-hide="default-modal2" class="min-w-[140px] 2xl:min-w-[200px] btn-primary">Save & close</button>
+                      <button data-modal-hide="default-modal2" type="button" class="flex-1 sm:flex-none min-w-[140px] 2xl:min-w-[200px] btn-white">Cancel</button>
+                      <button data-modal-hide="default-modal2" class="flex-1 sm:flex-none min-w-[140px] 2xl:min-w-[200px] btn-primary">Save & close</button>
                     </div>
                   </div>
               </div>
@@ -555,61 +587,8 @@
       </main>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-   
+    <script src="js/layout.js"></script>
     <script>
-      let ipadView = window.matchMedia("(max-width: 1024px)");
-
-      let collapseSidebarButton = document.getElementById('collapse-sidebar-button')
-      let sidebar = document.getElementById('sidebar')
-      let mainSection = document.getElementById('main-section')
-
-      collapseSidebarButton.addEventListener('click',()=>{
-        sidebar.classList.toggle('collapse-sidebar')
-        
-        if(sidebar.classList.contains('collapse-sidebar')){
-          sidebar.classList.remove('h-screen')
-          mainSection.classList.remove('h-screen')
-          collapseSidebarButton.classList.add('rotate-180')
-        }else{
-          sidebar.classList.add('h-screen')
-          mainSection.classList.add('h-screen')
-          collapseSidebarButton.classList.remove('rotate-180')
-
-        }
-
-        onclickResponse()
-
-      })
-
-      function onclickResponse(){
-          if (ipadView.matches && !sidebar?.classList.contains("collapse-sidebar")) {
-              sidebar?.classList.add("absolute");
-              sidebar?.classList.remove("relative");
-          } else {
-              sidebar?.classList.remove("absolute");
-              sidebar?.classList.add("relative");
-          }
-      }
-
-
-      window.addEventListener('load',()=>{
-        menuResponse()
-      })
-
-      window.addEventListener('resize',()=>{
-        menuResponse()
-      })
-
-      function menuResponse() {
-        if (ipadView.matches) {
-            sidebar?.classList.add("collapse-sidebar");
-        } else {
-            sidebar?.classList.remove("collapse-sidebar");
-        }
-
-        onclickResponse()
-       
-    }
 
     let allCheck = document.querySelector('.all-check')
     let subCheck = document.querySelectorAll('.sub-check')
