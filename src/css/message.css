@@ -1,0 +1,85 @@
+
+
+.image-container{
+    min-width: 46px;
+    min-height: 46px;
+    position: relative;
+    cursor: auto;
+    pointer-events: unset;
+    margin-bottom: 20px;
+    padding-top: 4px;
+}
+.uploadMore{
+    min-width: 46px;
+    min-height: 46px;
+    border: 1px dashed rgb(139, 139, 139);
+    align-items: center;
+    justify-content: center;
+    cursor: auto;
+    pointer-events: unset;
+    cursor: pointer;
+    margin-bottom: 18px;
+}
+.image-container:before {
+    z-index: 3;
+    content: "\2716";
+    align-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5px;
+    position: absolute;
+    color: #137ACE;
+    top: 0px;
+    left: -4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #137ACE;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.image-preview {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-position: center;
+    object-fit: cover;
+}
+
+.image-size {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(4px);
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: unset;
+}
+
+.exceeded-size
+{
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    font-weight: bold;
+    font-size: 9px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    color: white;
+    background: rgba(255, 0, 0, 0.397);
+    pointer-events: unset;
+}

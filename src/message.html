@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="./output.css" rel="stylesheet" />
+    <link href="./css/output.css" rel="stylesheet" />
+    <link href="./css/message.css" rel="stylesheet" />
+    
     <title>message</title>
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" /> -->
   </head>
@@ -29,7 +31,7 @@
         </div>
 
           <div class="flex items-center">
-            <div class="flex items-center px-2 space-x-1 sm:space-x-3 2xl:space-x-5">
+            <div class="flex items-center px-2 sm:space-x-3 2xl:space-x-5">
 
               <!-- search -->
                 <div class="hidden sm:block">
@@ -50,7 +52,7 @@
                 </div>
 
                 <!-- notinfication -->
-                <div class="pr-[22px] 2xl:pr-8 border-r-[2px] border-r-gray-100">
+                <div class="sm:pr-[22px] 2xl:pr-8 sm:border-r-[2px] border-r-gray-100">
                   <button class="relative size-[30px] sm:size-[40px] 2xl:size-[50px] flex justify-center items-center text-primary">
                     <svg class="size-[34px] 2xl:size-10" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <rect width="50" height="50" rx="5" fill="white"/>
@@ -58,9 +60,9 @@
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M12 10H38.2398V34.6099H12V10Z" fill="white"/>
                       </mask>
                       <g mask="url(#mask0_155_293)">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M25.1179 12.1279C20.1599 12.1279 16.7041 16.012 16.7041 19.4975C16.7041 22.4468 15.8856 23.8101 15.1621 25.0131C14.5819 25.9791 14.1237 26.7423 14.1237 28.4007C14.3606 31.0762 16.1268 32.482 25.1179 32.482C34.0593 32.482 35.8808 31.0137 36.1163 28.3085C36.1121 26.7423 35.6538 25.9791 35.0736 25.0131C34.3501 23.8101 33.5316 22.4468 33.5316 19.4975C33.5316 16.012 30.0759 12.1279 25.1179 12.1279ZM25.1178 34.6099C18.4845 34.6099 12.4894 34.1418 12 28.4915C11.9958 26.1536 12.7093 24.9648 13.3392 23.9179C13.9761 22.8568 14.5762 21.8567 14.5762 19.4975C14.5762 14.9112 18.8121 10 25.1178 10C31.4235 10 35.6595 14.9112 35.6595 19.4975C35.6595 21.8567 36.2595 22.8568 36.8965 23.9179C37.5264 24.9648 38.2399 26.1536 38.2399 28.4007C37.7448 34.1418 31.7512 34.6099 25.1178 34.6099Z" fill="currentColor"/>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M25.1179 12.1279C20.1599 12.1279 16.7041 16.012 16.7041 19.4975C16.7041 22.4468 15.8856 23.8101 15.1621 25.0131C14.5819 25.9791 14.1237 26.7423 14.1237 28.4007C14.3606 31.0762 16.1268 32.482 25.1179 32.482C34.0593 32.482 35.8808 31.0137 36.1163 28.3085C36.1121 26.7423 35.6538 25.9791 35.0736 25.0131C34.3501 23.8101 33.5316 22.4468 33.5316 19.4975C33.5316 16.012 30.0759 12.1279 25.1179 12.1279ZM25.1178 34.6099C18.4845 34.6099 12.4894 34.1418 12 28.4915C11.9958 26.1536 12.7093 24.9648 13.3392 23.9179C13.9761 22.8568 14.5762 21.8567 14.5762 19.4975C14.5762 14.9112 18.8121 10 25.1178 10C31.4235 10 35.6595 14.9112 35.6595 19.4975C35.6595 21.8567 36.2595 22.8568 36.8965 23.9179C37.5264 24.9648 38.2399 26.1536 38.2399 28.4007C37.7448 34.1418 31.7512 34.6099 25.1178 34.6099Z" fill="#1E4D57"/>
                       </g>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0488 40.5001H25.046C23.4557 40.4987 21.9506 39.7979 20.8086 38.5254C20.4157 38.0899 20.4511 37.4161 20.8881 37.0245C21.325 36.6302 21.9974 36.6656 22.3904 37.104C23.1252 37.9225 24.0686 38.3722 25.0474 38.3722H25.0488C26.0319 38.3722 26.9795 37.9225 27.7158 37.1025C28.1102 36.667 28.7826 36.6316 29.2181 37.0245C29.655 37.4175 29.6905 38.0913 29.2975 38.5268C28.1513 39.7993 26.6433 40.5001 25.0488 40.5001Z" fill="currentColor"/>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0488 40.5001H25.046C23.4557 40.4987 21.9506 39.7979 20.8086 38.5254C20.4157 38.0899 20.4511 37.4161 20.8881 37.0245C21.325 36.6302 21.9974 36.6656 22.3904 37.104C23.1252 37.9225 24.0686 38.3722 25.0474 38.3722H25.0488C26.0319 38.3722 26.9795 37.9225 27.7158 37.1025C28.1102 36.667 28.7826 36.6316 29.2181 37.0245C29.655 37.4175 29.6905 38.0913 29.2975 38.5268C28.1513 39.7993 26.6433 40.5001 25.0488 40.5001Z" fill="#1E4D57"/>
                       </svg>
                     <span class="font-16 absolute top-[-15px] right-[-10px] 2xl:top-[-18px] 2xl:right-[-18px] text-white flex justify-center items-center checkbox-size rounded-full mt-2 mr-2 bg-secondary">7</span>                
                   </button>
@@ -313,12 +315,12 @@
           </ul>
         </aside>
       </div>
-      <main id="main-section" class="min-h-screen h-screen w-full pt-[100px] 2xl:pt-[140px] overflow-y-auto">
-        <div class="p-5 2xl:p-7 w-full h-full">
+      <main id="main-section" class="min-h-screen h-screen flex flex-col w-full pt-[100px] 2xl:pt-[140px] overflow-y-auto">
+        <div class="p-5 2xl:p-7 w-full flex-1">
           <div class="flex flex-col h-full">
-            <div class="flex items-center justify-end flex-wrap">
-              <div class="flex items-center gap-5 2xl:gap-6 justify-end relative">
-                <a href="add-new-contact.html" class="flex items-center justify-between px-3 2xl:px-4 py-[11px] 2xl:py-5 bg-white hover:bg-[#fcfcfc] text-gray-dark" href="javascript:;">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-end flex-wrap">
+              <div class="flex items-center gap-5 2xl:gap-6 sm:justify-end relative">
+                <a href="add-new-contact.html" class="flex-1 flex items-center justify-between px-3 2xl:px-4 py-[11px] 2xl:py-5 bg-white hover:bg-[#fcfcfc] text-gray-dark" href="javascript:;">
                   <p class="font-20 font-semibold mr-7">New Contact</p>
                   <svg class="size-3 2xl:size[20px]" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18 9.50129H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -332,8 +334,8 @@
                     </svg>                
                   </button>
                   <div id="dropdown" class="dropdown dropdown-default-position hidden w-[150px] bg-white border border-gray-dark/20">
-                    <ul aria-labelledby="dropdownDefaultButton" class="px-3 text-gray-dark">
-                      <li class="group/list border-b last:border-b-0 duration-300 hover:text-secondary">
+                    <ul aria-labelledby="dropdownDefaultButton" class="px-3 py-1.5 text-gray-dark">
+                      <li class="group/list border-b last:border-b-transparent duration-300 hover:border-secondary hover:text-secondary">
                         <a class="flex items-center space-x-2 2xl:space-x-3 p-2 2xl:p-3" href="javascript:;">
                           <svg class="size-4 2xl:size[20px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_105_3071)">
@@ -349,7 +351,7 @@
                             <p class="font-18 font-light">Import</p>   
                         </a> 
                       </li>
-                      <li class="group/list border-b last:border-b-0 duration-300 hover:text-secondary">
+                      <li class="group/list border-b last:border-b-transparent duration-300 hover:border-secondary hover:text-secondary">
                         <a  class="flex items-center space-x-3 p-2 2xl:p-3" href="javascript:;">
                           <svg class="size-4 2xl:size[20px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_105_3076)">
@@ -370,10 +372,10 @@
                 </div>
               </div>
             </div>
-            <div class="mt-6 flex-1">
-                <div class="flex flex-wrap -mx-2.5 h-full">
-                    <div class="px-2.5 w-7/12 h-full">
-                      <div class="flex flex-col bg-white h-full">
+            <div class="mt-6 md:flex-1">
+                <div class="flex flex-wrap -mx-2.5 md:h-full">
+                    <div class="px-2.5 w-full md:w-7/12 h-full">
+                      <div id="message-content" class="flex flex-col bg-white h-full">
                         <div class="flex justify-between flex-wrap">
                           <div class="flex flex-wrap">
                             <div class="text-secondary bg-secondary/10 p-4 2xl:p-6">
@@ -446,9 +448,42 @@
                         </div>
                       </div>
                     </div>
-                    <div class="px-2.5 w-5/12 h-full">
-                      <div class="bg-white h-full py-5 px-5 2xl:px-8 2xl:py-6">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione culpa in, molestias doloremque tempore deleniti, quidem sit tempora aut et ipsam vel doloribus fugiat aspernatur cupiditate sapiente beatae dolorem ipsum.
+                    <div class="mt-5 md:mt-0 px-2.5 w-full md:w-5/12 md:h-full">
+                      <div id="messenger-div" class="flex flex-col min-h-[480px]">
+                        <div class="bg-white w-full px-4">
+                          <div class="border-b py-4 space-y-3">
+                            <h2 class="capitalize font-40 font-medium text-primary">Robert Dewayne</h2>
+                            <span class="flex items-center space-x-1 font-18 font-[300] text-default-green">
+                              <span class="block size-2 2xl:size-2.5 rounded-full bg-default-green"></span>
+                              <span>Active Now</span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="msg-space flex-1 bg-white py-4 px-4 overflow-y-scroll customScroll-none font-18 space-y-4 flex flex-col"></div>
+                        <div class="w-full bg-white p-4 flex items-end text-gray-700 rounded-b-lg">
+                         <div class="w-full">
+                          <form action="" method="" enctype="multipart/form-data" id="my-form"></form>
+                  
+                            <div class="multiple-uploader pl-1 customScrollY flex flex-wrap items-end overflow-y-auto max-h-[244px] gap-4" id="multiple-uploader"></div>
+                  
+                            <div class="relative">
+                              <input class="msg-input w-full border outline-none h-12 pl-2 pr-8 font-18" type="text" placeholder="Type message">
+                              <button class="fileBtn absolute top-1/2 -translate-y-1/2 right-2 text-gray-500 hover:text-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13" />
+                                </svg>
+                              </button>
+                            </div>
+                         </div>
+                  
+                          <div>
+                            <button class="msg-btn  ml-2 size-12 rounded-md flex justify-center items-center bg-primary hover:bg-[#183c44]">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 text-white">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                              </svg>          
+                            </button>
+                          </div>
+                        </div>
                       </div>
                   </div>
               </div>
@@ -459,5 +494,6 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script src="js/layout.js"></script>
+    <script src="js/message.js"></script>
   </body>
 </html>

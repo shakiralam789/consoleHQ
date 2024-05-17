@@ -96,7 +96,7 @@
     "yaml": "^2.3.4"
   },
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./src/output.css --watch "
+    "build": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch "
   },
   "keywords": [],
   "author": "",

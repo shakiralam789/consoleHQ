@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="./output.css" rel="stylesheet" />
+    <link href="./css/output.css" rel="stylesheet" />
     <title>contacts</title>
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" /> -->
   </head>
@@ -29,7 +29,7 @@
         </div>
 
           <div class="flex items-center">
-            <div class="flex items-center px-2 space-x-1 sm:space-x-3 2xl:space-x-5">
+            <div class="flex items-center px-2 sm:space-x-3 2xl:space-x-5">
 
               <!-- search -->
                 <div class="hidden sm:block">
@@ -50,7 +50,7 @@
                 </div>
 
                 <!-- notinfication -->
-                <div class="pr-[22px] 2xl:pr-8 border-r-[2px] border-r-gray-100">
+                <div class="sm:pr-[22px] 2xl:pr-8 sm:border-r-[2px] border-r-gray-100">
                   <button class="relative size-[30px] sm:size-[40px] 2xl:size-[50px] flex justify-center items-center text-primary">
                     <svg class="size-[34px] 2xl:size-10" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <rect width="50" height="50" rx="5" fill="white"/>
@@ -86,7 +86,7 @@
       </nav>
     </header>
     <div class="flex">
-      <div id="overlay" class="z-10 lg:hidden [&.active]:opacity-50 opacity-0 pointer-events-none fixed h-screen w-screen bg-black duration-300"></div>
+      <div id="overlay" class="z-10 lg:hidden [&.active]:opacity-50 opacity-0 [&.active]:pointer-events-auto pointer-events-none fixed h-screen w-screen bg-black duration-300"></div>
 
       <div id="sidebar" class="duration-300 z-40 top-0 left-0 lg:top-auto lg:left-auto h-screen pt-[100px] 2xl:pt-[140px] shrink-0 group">
         <button class="hidden lg:flex collapse-sidebar-button duration-300 delay-300 absolute top-[calc(100px+24px)] 2xl:top-[calc(140px+48px)] left-full -translate-x-1/2 bg-primary text-white size-4 2xl:size-5 rounded-2xl justify-center items-center">
@@ -313,12 +313,12 @@
           </ul>
         </aside>
       </div>
-      <main id="main-section" class="min-h-screen h-screen w-full pt-[100px] 2xl:pt-[140px] overflow-y-auto">
-        <div class="p-5 2xl:p-7 w-full">
-          <div class="flex items-center justify-between flex-wrap">
-            <h3 class="text-gray-dark font-28 font-semibold">Contacts</h3>
-            <div class="flex items-center gap-5 2xl:gap-6 justify-end relative">
-              <a href="add-new-contact.html" class="flex items-center justify-between px-3 2xl:px-4 py-[11px] 2xl:py-5 bg-white hover:bg-[#fcfcfc] text-gray-dark" href="javascript:;">
+      <main id="main-section" class="min-h-screen h-screen flex flex-col w-full pt-[100px] 2xl:pt-[140px] overflow-y-auto">
+        <div class="p-5 2xl:p-7 w-full flex-1">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between flex-wrap">
+            <h3 class="text-gray-dark font-28 font-semibold mb-4 sm:mb-0">Contacts</h3>
+            <div class="flex items-center gap-5 2xl:gap-6 sm:justify-end relative">
+              <a href="add-new-contact.html" class="flex-1 flex items-center justify-between px-3 2xl:px-4 py-[11px] 2xl:py-5 bg-white hover:bg-[#fcfcfc] text-gray-dark" href="javascript:;">
                 <p class="font-20 font-semibold mr-7">New Contact</p>
                 <svg class="size-3 2xl:size[20px]" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M18 9.50129H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -332,8 +332,8 @@
                   </svg>                
                 </button>
                 <div id="dropdown" class="dropdown dropdown-default-position hidden w-[150px] bg-white border border-gray-dark/20">
-                  <ul aria-labelledby="dropdownDefaultButton" class="px-3 text-gray-dark">
-                    <li class="group/list border-b last:border-b-0 duration-300 hover:text-secondary">
+                  <ul aria-labelledby="dropdownDefaultButton" class="px-3 py-1.5 text-gray-dark">
+                    <li class="group/list border-b last:border-b-transparent duration-300 hover:border-secondary hover:text-secondary">
                       <a class="flex items-center space-x-2 2xl:space-x-3 p-2 2xl:p-3" href="javascript:;">
                         <svg class="size-4 2xl:size[20px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <g clip-path="url(#clip0_105_3071)">
@@ -349,7 +349,7 @@
                           <p class="font-18 font-light">Import</p>   
                       </a> 
                     </li>
-                    <li class="group/list border-b last:border-b-0 duration-300 hover:text-secondary">
+                    <li class="group/list border-b last:border-b-transparent duration-300 hover:border-secondary hover:text-secondary">
                       <a  class="flex items-center space-x-3 p-2 2xl:p-3" href="javascript:;">
                         <svg class="size-4 2xl:size[20px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <g clip-path="url(#clip0_105_3076)">
@@ -369,15 +369,15 @@
                 </div> 
               </div>
             </div>
-        </div>
+          </div>
         
-        <div class="bg-white mt-6">
-            <div class="py-5 px-5 2xl:px-8 2xl:py-6 border-b">
-                <div class="flex flex-wrap items-center -mx-4">
-                  <div class="xl:w-1/3 lg:w-1/4 w-full px-4">
+        <div class="bg-white mt-5 sm:mt-6">
+            <div class="py-4 sm:py-5 px-4 sm:px-5 2xl:px-8 2xl:py-6 border-b">
+                <div class="flex flex-wrap items-center -mx-2 gap-y-4">
+                  <div class="w-full md:w-3/12 px-2">
                       <h5 class="text-gray-dark font-semibold font-24">All Contacts</h5>
                   </div>
-                  <div class="xl:w-1/3 lg:w-2/4 w-full px-2 2xl:px-4 my-3 lg:my-0">
+                  <div class="w-full sm:w-7/12 md:w-6/12 px-2">
                       <div class="flex items-center border px-4 2xl:px-6">
                           <svg class="size-[18px] 2xl:size[20px]" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <mask id="mask0_29_175" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
@@ -396,11 +396,11 @@
                           <input type="search" class="default-search-input flex-1" placeholder="Search Contact">                                                                        
                       </div>
                   </div>
-                  <div class="xl:w-1/3 lg:w-1/4 w-full px-4">
+                  <div class="w-full sm:w-5/12 md:w-3/12 px-2">
                       <div class="flex items-center justify-end">
                         
-                      <div class="relative group/main">
-                        <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider" class="flex items-center justify-between px-3 2xl:px-4 py-[11px] 2xl:py-5 rounded-md bg-white shadow-md text-gray-dark" type="button">
+                      <div class="relative group/main w-full sm:w-fit">
+                        <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider" class="w-full sm:w-fit flex items-center justify-between px-3 2xl:px-4 py-[11px] 2xl:py-5 sm:rounded-md bg-white border sm:border-0 sm:shadow-md text-gray-dark" type="button">
                           <div class="flex items-center space-x-3">
                             <svg class="size-4 2xl:size[20px]" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M5.81973 1.50005L5.81973 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -415,29 +415,29 @@
                             </svg>   
                           </button>
                           <div id="dropdownDivider" class="dropdown dropdown-default-position hidden bg-white border border-gray-dark/20 w-[160px] 2xl:w-[225px]">
-                              <ul class="" aria-labelledby="dropdownDividerButton">
-                                <li>
-                                  <a  class="capitalize block p-3 2xl:p-4 font-16 text-gray-light hover:text-secondary" href="javascript:;">                                   
+                              <ul class="px-3 py-1.5 text-gray-dark" aria-labelledby="dropdownDividerButton">
+                                <li class="border-b last:border-b-transparent duration-300 hover:border-secondary hover:text-secondary">
+                                  <a  class="capitalize block p-2 2xl:p-3 font-16 text-gray-light hover:text-secondary" href="javascript:;">                                   
                                       name 
                                   </a> 
                                 </li> 
-                                <li>
-                                  <a  class="capitalize block p-3 2xl:p-4 font-16 text-gray-light hover:text-secondary" href="javascript:;">                                   
+                                <li class="border-b last:border-b-transparent duration-300 hover:border-secondary hover:text-secondary">
+                                  <a  class="capitalize block p-2 2xl:p-3 font-16 text-gray-light hover:text-secondary" href="javascript:;">                                   
                                       Email 
                                   </a> 
                                 </li> 
-                                <li>
-                                  <a  class="capitalize block p-3 2xl:p-4 font-16 text-gray-light hover:text-secondary" href="javascript:;">                                   
+                                <li class="border-b last:border-b-transparent duration-300 hover:border-secondary hover:text-secondary">
+                                  <a  class="capitalize block p-2 2xl:p-3 font-16 text-gray-light hover:text-secondary" href="javascript:;">                                   
                                       Date Added 
                                   </a> 
                                 </li>
-                                 <li>
-                                  <a  class="capitalize block p-3 2xl:p-4 font-16 text-gray-light hover:text-secondary" href="javascript:;">                                   
+                                 <li class="border-b last:border-b-transparent duration-300 hover:border-secondary hover:text-secondary">
+                                  <a  class="capitalize block p-2 2xl:p-3 font-16 text-gray-light hover:text-secondary" href="javascript:;">                                   
                                       They Owe 
                                   </a> 
                                 </li> 
-                                <li>
-                                  <a  class="capitalize block p-3 2xl:p-4 font-16 text-gray-light hover:text-secondary" href="javascript:;">                                   
+                                <li class="border-b last:border-b-transparent duration-300 hover:border-secondary hover:text-secondary">
+                                  <a  class="capitalize block p-2 2xl:p-3 font-16 text-gray-light hover:text-secondary" href="javascript:;">                                   
                                       You Owe 
                                   </a> 
                                 </li>
@@ -460,14 +460,14 @@
                   </div>
               </div>
             </div>
-            <div class="py-5 px-5 2xl:px-8 2xl:py-6 border-b">
+            <div class="py-5 px-4 sm:px-5 2xl:px-8 2xl:py-6 border-b">
                 <div class="flex flex-wrap items-center -mx-4">
-                  <div class="w-1/2 px-4">
+                  <div class="w-full sm:w-1/2 px-4 border-b sm:border-b-0 pb-5 sm:pb-0">
                       <h6 class="font-light font-18 text-gray-light">2 Contacts Selected</h6>
                   </div>
-                  <div class="w-1/2 px-4">
+                  <div class="w-full sm:w-1/2 px-4 pt-5 sm:pt-0">
                       <div class="flex items-center justify-end">
-                          <a class="flex items-center space-x-3 pr-4 group" href="javascript:;">
+                          <a class="w-1/2 sm:w-fit flex justify-center sm:justify-start items-center space-x-3 pr-4 group" href="javascript:;">
                               <p class="text-gray-dark font-20 font-semibold group-hover:text-secondary duration-300">Export</p>
                               <svg class="group-hover:text-secondary size-4 2xl:size-6" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M14.7335 1.02995L14.7335 17.8125" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -475,7 +475,7 @@
                                 <path d="M21.1752 10.6338H22.4724C25.3019 10.6338 27.5947 12.9321 27.5947 15.7699L27.5947 22.5771C27.5947 25.4065 25.3075 27.6993 22.485 27.6993L6.99574 27.6993C4.16625 27.6993 1.87207 25.3995 1.87207 22.5632L1.87207 15.7545C1.87207 12.9266 4.16069 10.6338 6.98184 10.6338H8.29161" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                               </svg>                                        
                           </a>
-                          <a class="flex items-center space-x-3 border-l pl-4 group" href="javascript:;">
+                          <a class="w-1/2 sm:w-fit flex justify-center sm:justify-start items-center space-x-3 border-l pl-4 group" href="javascript:;">
                               <p class="duration-300 text-gray-dark font-20 font-semibold group-hover:text-secondary">Archive</p>
                               <svg class="group-hover:text-secondary duration-300 mx-auto size-6 2xl:size-8 text-primary" width="100pt" height="100pt" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                 <g id="currentColorff">
@@ -490,13 +490,13 @@
                   </div>
               </div>
             </div>
-            <div class="px-5 2xl:px-8 pb-5 2xl:pb-8">
+            <div class="px-2 sm:px-5 2xl:px-8 pb-5 2xl:pb-8">
               <div class="overflow-x-scroll">
                 <table class="w-full border-separate border-spacing-y-0">
                   <thead class="whitespace-nowrap">
                     <tr>
-                      <th class="w-8/12 py-3 2xl:py-4">
-                        <div class="flex items-center pl-5 2xl:pl-7 space-x-3 2xl:space-x-5">
+                      <th class="w-8/12 py-4 px-2 sm:px-5 2xl:px-7">
+                        <div class="flex items-center space-x-3 2xl:space-x-5">
                           <label class="flex group/check">
                             
                             <span class="all-check cursor-pointer group-has-[input:checked]/check:bg-default-green group-has-[input:checked]/check:border-default-green flex justify-center items-center checkbox-size border border-gray-light rounded-[5px]">
@@ -507,12 +507,12 @@
                           <label for="contact" class="font-20 font-semibold text-gray-dark">Contact</label>
                         </div>
                       </th>
-                      <th class="max-w-[400px] py-3 2xl:py-4">
+                      <th class="max-w-[400px] py-3 2xl:py-4 sm:px-5 2xl:px-7">
                         <div class="flex items-center space-x-40 text-gray-dark font-semibold font-20 pr-6">
                             <p>They Owe</p>
                         </div>
                       </th>
-                      <th class="max-w-[400px] py-3 2xl:py-4">
+                      <th class="max-w-[400px] py-3 2xl:py-4 sm:px-5 2xl:px-7">
                         <div class="flex items-center space-x-40 text-gray-dark font-semibold font-20 pr-6">
                             <p>You Owe</p>
                         </div>
@@ -524,7 +524,7 @@
                   </thead>
                   <tbody>
                     <tr class="table-row [&>*:first-child]:border-l [&>*:last-child]:border-r *:border-t *:border-b *:border-white">
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6">
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6">
                         <div class="flex space-x-3 2xl:space-x-5">
                           <label class="flex group/check">
                            
@@ -539,9 +539,9 @@
                             </div>
                         </div>
                       </td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6"></td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6"></td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6">
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6"></td>
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6"></td>
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6">
                         <div class="relative flex items-center justify-end">
                           <button class="text-gray-light focus:text-secondary hover:text-secondary flex items-center justify-center !size-[25px] 2xl:!size-[34px] p-1.5 2xl:p-2" id="table-dropdown2" data-dropdown-toggle="table-dropdowntabelAction2">
                             <svg class="h-full" stroke="currentColor" fill="currentColor" viewBox="0 0 6 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -551,8 +551,8 @@
                               </svg>
                           </button>
                           <div id="table-dropdowntabelAction2" class="hidden dropdown-default-position-middle w-[130px] 2xl:w-[170px] bg-white border border-gray-dark/20 px-3">
-                            <ul aria-labelledby="table-dropdown2">
-                              <li class="border-b last:border-b-0">
+                            <ul class="py-1.5" aria-labelledby="table-dropdown2">
+                              <li class="border-b hover:border-secondary last:border-b-transparent">
                                 <a class="duration-300 flex items-center hover:text-secondary space-x-3 px-3 py-2 2xl:p-3" href="javascript:;">
                                   <svg class="w-3.5 2xl:w-4" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <mask id="mask0_105_3429" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0">
@@ -567,7 +567,7 @@
                                     <p class="font-18 font-light">Edit</p>   
                                 </a> 
                               </li>
-                              <li class="border-b last:border-b-0">
+                              <li class="border-b hover:border-secondary last:border-b-transparent duration-300">
                                 <a  class="duration-300 flex items-center hover:text-secondary space-x-3 px-3 py-2 2xl:p-3" href="javascript:;">
                                   <svg class="w-4 2xl:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m9 13.5 3 3m0 0 3-3m-3 3v-6m1.06-4.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
@@ -575,7 +575,7 @@
                                     <p class="font-18 font-light">Archive</p>   
                                 </a> 
                               </li>
-                              <li class="border-b last:border-b-0">
+                              <li class="border-b hover:border-secondary last:border-b-transparent duration-300">
                                 <a  class="duration-300 flex items-center hover:text-secondary space-x-3 px-3 py-2 2xl:p-3" href="javascript:;">
                                   <svg class="w-4 2xl:w-5" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M8.784 18.9999C7.49673 18.9999 6.24176 18.9856 5.00009 18.96C3.41167 18.9286 2.3125 17.8988 2.13295 16.2724C1.8337 13.5744 1.32164 7.21496 1.31689 7.15131C1.28459 6.75896 1.57719 6.41505 1.96955 6.3837C2.35621 6.37325 2.70581 6.64496 2.73716 7.03636C2.74191 7.10096 3.25302 13.4385 3.54942 16.1156C3.65107 17.04 4.14983 17.5169 5.02955 17.535C7.40458 17.5853 9.82807 17.5882 12.4406 17.5407C13.3754 17.5226 13.8808 17.0552 13.9853 16.109C14.2798 13.4547 14.7928 7.10096 14.7985 7.03636C14.8299 6.64496 15.1766 6.37135 15.5652 6.3837C15.9576 6.416 16.2502 6.75896 16.2188 7.15131C16.2131 7.21591 15.6982 13.5915 15.4018 16.2657C15.2175 17.9254 14.1212 18.9353 12.4663 18.9657C11.1999 18.9875 9.97817 18.9999 8.784 18.9999" fill="currentColor"/>
@@ -591,7 +591,7 @@
                       </td>
                     </tr>
                     <tr class="table-row [&>*:first-child]:border-l [&>*:last-child]:border-r *:border-t *:border-b *:border-white">
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6">
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6">
                         <div class="flex space-x-3 2xl:space-x-5">
                           <label class="flex group/check">
                            
@@ -606,9 +606,9 @@
                             </div>
                         </div>
                       </td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6"></td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6"></td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6">
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6"></td>
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6"></td>
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6">
                         <div class="relative flex items-center justify-end">
                           <button class="text-gray-light focus:text-secondary hover:text-secondary flex items-center justify-center !size-[25px] 2xl:!size-[34px] p-1.5 2xl:p-2" id="table-dropdown3" data-dropdown-toggle="table-dropdowntabelAction3">
                             <svg class="h-full" stroke="currentColor" fill="currentColor" viewBox="0 0 6 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -619,7 +619,7 @@
                           </button>
                           <div id="table-dropdowntabelAction3" class="hidden dropdown-default-position-middle w-[130px] 2xl:w-[170px] bg-white border border-gray-dark/20 px-3">
                             <ul aria-labelledby="table-dropdown3">
-                              <li class="border-b last:border-b-0">
+                              <li class="border-b hover:border-secondary last:border-b-transparent duration-300">
                                 <a class="duration-300 flex items-center hover:text-secondary space-x-3 px-3 py-2 2xl:p-3" href="javascript:;">
                                   <svg class="w-3.5 2xl:w-4" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <mask id="mask0_105_3429" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0">
@@ -634,7 +634,7 @@
                                     <p class="font-18 font-light">Edit</p>   
                                 </a> 
                               </li>
-                              <li class="border-b last:border-b-0">
+                              <li class="border-b hover:border-secondary last:border-b-transparent duration-300">
                                 <a  class="duration-300 flex items-center hover:text-secondary space-x-3 px-3 py-2 2xl:p-3" href="javascript:;">
                                   <svg class="w-4 2xl:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m9 13.5 3 3m0 0 3-3m-3 3v-6m1.06-4.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
@@ -642,7 +642,7 @@
                                     <p class="font-18 font-light">Archive</p>   
                                 </a> 
                               </li>
-                              <li class="border-b last:border-b-0">
+                              <li class="border-b hover:border-secondary last:border-b-transparent duration-300">
                                 <a  class="duration-300 flex items-center hover:text-secondary space-x-3 px-3 py-2 2xl:p-3" href="javascript:;">
                                   <svg class="w-4 2xl:w-5" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M8.784 18.9999C7.49673 18.9999 6.24176 18.9856 5.00009 18.96C3.41167 18.9286 2.3125 17.8988 2.13295 16.2724C1.8337 13.5744 1.32164 7.21496 1.31689 7.15131C1.28459 6.75896 1.57719 6.41505 1.96955 6.3837C2.35621 6.37325 2.70581 6.64496 2.73716 7.03636C2.74191 7.10096 3.25302 13.4385 3.54942 16.1156C3.65107 17.04 4.14983 17.5169 5.02955 17.535C7.40458 17.5853 9.82807 17.5882 12.4406 17.5407C13.3754 17.5226 13.8808 17.0552 13.9853 16.109C14.2798 13.4547 14.7928 7.10096 14.7985 7.03636C14.8299 6.64496 15.1766 6.37135 15.5652 6.3837C15.9576 6.416 16.2502 6.75896 16.2188 7.15131C16.2131 7.21591 15.6982 13.5915 15.4018 16.2657C15.2175 17.9254 14.1212 18.9353 12.4663 18.9657C11.1999 18.9875 9.97817 18.9999 8.784 18.9999" fill="currentColor"/>
@@ -658,7 +658,7 @@
                       </td>
                     </tr>
                     <tr class="table-row [&>*:first-child]:border-l [&>*:last-child]:border-r *:border-t *:border-b *:border-white">
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6">
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6">
                         <div class="flex space-x-3 2xl:space-x-5">
                           <label class="flex group/check">
                            
@@ -673,9 +673,9 @@
                             </div>
                         </div>
                       </td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6"></td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6"></td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6">
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6"></td>
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6"></td>
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6">
                         <div class="relative flex items-center justify-end">
                           <button class="text-gray-light focus:text-secondary hover:text-secondary flex items-center justify-center !size-[25px] 2xl:!size-[34px] p-1.5 2xl:p-2" id="table-dropdown4" data-dropdown-toggle="table-dropdowntabelAction4">
                             <svg class="h-full" stroke="currentColor" fill="currentColor" viewBox="0 0 6 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -686,7 +686,7 @@
                           </button>
                           <div id="table-dropdowntabelAction4" class="hidden dropdown-default-position-middle w-[130px] 2xl:w-[170px] bg-white border border-gray-dark/20 px-3">
                             <ul aria-labelledby="table-dropdown4">
-                              <li class="border-b last:border-b-0">
+                              <li class="border-b hover:border-secondary last:border-b-transparent duration-300">
                                 <a class="duration-300 flex items-center hover:text-secondary space-x-3 px-3 py-2 2xl:p-3" href="javascript:;">
                                   <svg class="w-3.5 2xl:w-4" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <mask id="mask0_105_3429" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0">
@@ -701,7 +701,7 @@
                                     <p class="font-18 font-light">Edit</p>   
                                 </a> 
                               </li>
-                              <li class="border-b last:border-b-0">
+                              <li class="border-b hover:border-secondary last:border-b-transparent duration-300">
                                 <a  class="duration-300 flex items-center hover:text-secondary space-x-3 px-3 py-2 2xl:p-3" href="javascript:;">
                                   <svg class="w-4 2xl:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m9 13.5 3 3m0 0 3-3m-3 3v-6m1.06-4.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
@@ -709,7 +709,7 @@
                                     <p class="font-18 font-light">Archive</p>   
                                 </a> 
                               </li>
-                              <li class="border-b last:border-b-0">
+                              <li class="border-b hover:border-secondary last:border-b-transparent duration-300">
                                 <a  class="duration-300 flex items-center hover:text-secondary space-x-3 px-3 py-2 2xl:p-3" href="javascript:;">
                                   <svg class="w-4 2xl:w-5" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M8.784 18.9999C7.49673 18.9999 6.24176 18.9856 5.00009 18.96C3.41167 18.9286 2.3125 17.8988 2.13295 16.2724C1.8337 13.5744 1.32164 7.21496 1.31689 7.15131C1.28459 6.75896 1.57719 6.41505 1.96955 6.3837C2.35621 6.37325 2.70581 6.64496 2.73716 7.03636C2.74191 7.10096 3.25302 13.4385 3.54942 16.1156C3.65107 17.04 4.14983 17.5169 5.02955 17.535C7.40458 17.5853 9.82807 17.5882 12.4406 17.5407C13.3754 17.5226 13.8808 17.0552 13.9853 16.109C14.2798 13.4547 14.7928 7.10096 14.7985 7.03636C14.8299 6.64496 15.1766 6.37135 15.5652 6.3837C15.9576 6.416 16.2502 6.75896 16.2188 7.15131C16.2131 7.21591 15.6982 13.5915 15.4018 16.2657C15.2175 17.9254 14.1212 18.9353 12.4663 18.9657C11.1999 18.9875 9.97817 18.9999 8.784 18.9999" fill="currentColor"/>
@@ -725,7 +725,7 @@
                       </td>
                     </tr>
                     <tr class="table-row [&>*:first-child]:border-l [&>*:last-child]:border-r *:border-t *:border-b *:border-white">
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6">
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6">
                         <div class="flex space-x-3 2xl:space-x-5">
                           <label class="flex group/check">
                            
@@ -740,9 +740,9 @@
                             </div>
                         </div>
                       </td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6"></td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6"></td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6">
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6"></td>
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6"></td>
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6">
                         <div class="relative flex items-center justify-end">
                           <button class="text-gray-light focus:text-secondary hover:text-secondary flex items-center justify-center !size-[25px] 2xl:!size-[34px] p-1.5 2xl:p-2" id="table-dropdown5" data-dropdown-toggle="table-dropdowntabelAction5">
                             <svg class="h-full" stroke="currentColor" fill="currentColor" viewBox="0 0 6 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -753,7 +753,7 @@
                           </button>
                           <div id="table-dropdowntabelAction5" class="hidden dropdown-default-position-middle w-[130px] 2xl:w-[170px] bg-white border border-gray-dark/20 px-3">
                             <ul aria-labelledby="table-dropdown5">
-                              <li class="border-b last:border-b-0">
+                              <li class="border-b hover:border-secondary last:border-b-transparent duration-300">
                                 <a class="duration-300 flex items-center hover:text-secondary space-x-3 px-3 py-2 2xl:p-3" href="javascript:;">
                                   <svg class="w-3.5 2xl:w-4" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <mask id="mask0_105_3429" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0">
@@ -768,7 +768,7 @@
                                     <p class="font-18 font-light">Edit</p>   
                                 </a> 
                               </li>
-                              <li class="border-b last:border-b-0">
+                              <li class="border-b hover:border-secondary last:border-b-transparent duration-300">
                                 <a  class="duration-300 flex items-center hover:text-secondary space-x-3 px-3 py-2 2xl:p-3" href="javascript:;">
                                   <svg class="w-4 2xl:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m9 13.5 3 3m0 0 3-3m-3 3v-6m1.06-4.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
@@ -776,7 +776,7 @@
                                     <p class="font-18 font-light">Archive</p>   
                                 </a> 
                               </li>
-                              <li class="border-b last:border-b-0">
+                              <li class="border-b hover:border-secondary last:border-b-transparent duration-300">
                                 <a  class="duration-300 flex items-center hover:text-secondary space-x-3 px-3 py-2 2xl:p-3" href="javascript:;">
                                   <svg class="w-4 2xl:w-5" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M8.784 18.9999C7.49673 18.9999 6.24176 18.9856 5.00009 18.96C3.41167 18.9286 2.3125 17.8988 2.13295 16.2724C1.8337 13.5744 1.32164 7.21496 1.31689 7.15131C1.28459 6.75896 1.57719 6.41505 1.96955 6.3837C2.35621 6.37325 2.70581 6.64496 2.73716 7.03636C2.74191 7.10096 3.25302 13.4385 3.54942 16.1156C3.65107 17.04 4.14983 17.5169 5.02955 17.535C7.40458 17.5853 9.82807 17.5882 12.4406 17.5407C13.3754 17.5226 13.8808 17.0552 13.9853 16.109C14.2798 13.4547 14.7928 7.10096 14.7985 7.03636C14.8299 6.64496 15.1766 6.37135 15.5652 6.3837C15.9576 6.416 16.2502 6.75896 16.2188 7.15131C16.2131 7.21591 15.6982 13.5915 15.4018 16.2657C15.2175 17.9254 14.1212 18.9353 12.4663 18.9657C11.1999 18.9875 9.97817 18.9999 8.784 18.9999" fill="currentColor"/>
@@ -792,7 +792,7 @@
                       </td>
                     </tr>
                     <tr class="table-row [&>*:first-child]:border-l [&>*:last-child]:border-r *:border-t *:border-b *:border-white">
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6">
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6">
                         <div class="flex space-x-3 2xl:space-x-5">
                           <label class="flex group/check">
                            
@@ -807,9 +807,9 @@
                             </div>
                         </div>
                       </td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6"></td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6"></td>
-                      <td class="px-5 py-3 2xl:px-7 2xl:py-6">
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6"></td>
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6"></td>
+                      <td class="px-2 sm:px-5 py-3 2xl:px-7 2xl:py-6">
                         <div class="relative flex items-center justify-end">
                           <button class="text-gray-light focus:text-secondary hover:text-secondary flex items-center justify-center !size-[25px] 2xl:!size-[34px] p-1.5 2xl:p-2" id="table-dropdown" data-dropdown-toggle="table-dropdowntabelAction">
                             <svg class="h-full" stroke="currentColor" fill="currentColor" viewBox="0 0 6 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -820,7 +820,7 @@
                           </button>
                           <div id="table-dropdowntabelAction" class="hidden dropdown-default-position-middle w-[130px] 2xl:w-[170px] bg-white border border-gray-dark/20 px-3">
                             <ul aria-labelledby="table-dropdown">
-                              <li class="border-b last:border-b-0">
+                              <li class="border-b hover:border-secondary last:border-b-transparent duration-300">
                                 <a class="duration-300 flex items-center hover:text-secondary space-x-3 px-3 py-2 2xl:p-3" href="javascript:;">
                                   <svg class="w-3.5 2xl:w-4" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <mask id="mask0_105_3429" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0">
@@ -835,7 +835,7 @@
                                     <p class="font-18 font-light">Edit</p>   
                                 </a> 
                               </li>
-                              <li class="border-b last:border-b-0">
+                              <li class="border-b hover:border-secondary last:border-b-transparent duration-300">
                                 <a  class="duration-300 flex items-center hover:text-secondary space-x-3 px-3 py-2 2xl:p-3" href="javascript:;">
                                   <svg class="w-4 2xl:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m9 13.5 3 3m0 0 3-3m-3 3v-6m1.06-4.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
@@ -843,7 +843,7 @@
                                     <p class="font-18 font-light">Archive</p>   
                                 </a> 
                               </li>
-                              <li class="border-b last:border-b-0">
+                              <li class="border-b hover:border-secondary last:border-b-transparent duration-300">
                                 <a  class="duration-300 flex items-center hover:text-secondary space-x-3 px-3 py-2 2xl:p-3" href="javascript:;">
                                   <svg class="w-4 2xl:w-5" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M8.784 18.9999C7.49673 18.9999 6.24176 18.9856 5.00009 18.96C3.41167 18.9286 2.3125 17.8988 2.13295 16.2724C1.8337 13.5744 1.32164 7.21496 1.31689 7.15131C1.28459 6.75896 1.57719 6.41505 1.96955 6.3837C2.35621 6.37325 2.70581 6.64496 2.73716 7.03636C2.74191 7.10096 3.25302 13.4385 3.54942 16.1156C3.65107 17.04 4.14983 17.5169 5.02955 17.535C7.40458 17.5853 9.82807 17.5882 12.4406 17.5407C13.3754 17.5226 13.8808 17.0552 13.9853 16.109C14.2798 13.4547 14.7928 7.10096 14.7985 7.03636C14.8299 6.64496 15.1766 6.37135 15.5652 6.3837C15.9576 6.416 16.2502 6.75896 16.2188 7.15131C16.2131 7.21591 15.6982 13.5915 15.4018 16.2657C15.2175 17.9254 14.1212 18.9353 12.4663 18.9657C11.1999 18.9875 9.97817 18.9999 8.784 18.9999" fill="currentColor"/>
