@@ -14,7 +14,11 @@ module.exports = {
          'red1': '#EB5757',
          'gray-3' : '#F0F0F0',
          'sky-light': '#EFF4F4',
-         'gray-4':'#F2F4F5'
+         'gray-4':'#F2F4F5',
+         'default-yellow' : '#FFAF36'
+      },
+      screens:{
+        'xs' : '400px'
       }
     },
   },

@@ -246,7 +246,7 @@ if(msgInput && msgSpace && msgBtn){
                             <img src="../src/images/avatar.jpg" class="w-full h-full rounded-full object-cover object-center"/>
                         </div>
                     </div>
-                    <div class="font-16 text-gray-500 pt-1">${month[time.getMonth()]} ${time.getDate()}, ${time.toLocaleString('en-US', { hour: 'numeric', minute:'numeric', hour12: true })}</div>`
+                    <div class="font-16 text-gray-500 pt-1 mr-7 2xl:mr-10">${month[time.getMonth()]} ${time.getDate()}, ${time.toLocaleString('en-US', { hour: 'numeric', minute:'numeric', hour12: true })}</div>`
     space.append(DIV)
     input.value = ''
     space.scrollTop = space.scrollHeight;
